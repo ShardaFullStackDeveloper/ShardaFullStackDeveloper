@@ -7,14 +7,11 @@
                 /* main container */
                 .main {
                         background-color: gray;
-                        height: 60vh;
-                        width: 60vh;
+                        height: 50vw;
+                        width: 50vw;
                         display: grid;
                         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-                        margin-top: 80px;
-                        margin-left: 20px;
-                        border-style: solid;
                         margin-left: 5%;
                         margin-top: 5%;
                      
@@ -24,21 +21,55 @@
                 /* white  box */
                 .white {
                         background-color: white;
-
+                        border-style: solid;
                 }
 
                 /* black box */
                 .black {
                         background-color: black;
-
+                        border-style: solid;
                 }
 
                 /* image class */
                 .image {
-                        height: 5vh;
-                        width: 5vh;
+                        height: 9vh;
+                        width: 7vh;
+                        margin-left: 10px;
 
                 }
+
+@media only screen and (max-width: 600px) {
+.main {
+height: 90vw;
+width: 90vw;
+}
+.image {
+height: 10vw; /* Adjust the size of the images */
+width: 8vw;
+}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+.main {
+height: 70vw;
+width: 70vw;
+}
+.image {
+height: 8vw; /* Adjust the size of the images */
+width: 6vw;
+}
+}
+
+@media only screen and (min-width: 1001px) {
+.main {
+height: 50vw;
+width: 50vw;
+}
+.image {
+height: 6vw; /* Adjust the size of the images */
+width: 4vw;
+}
+}
         </style>
 </head>
 
