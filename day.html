@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* container */
+        .container {
+            background-color: #496989;
+            height: 90vh;
+            width: 60vw;
+            margin-left: 20%;
+            padding-top: 20px;
+        }
+
+        /* display */
+        .display {
+            background-color: #A6FF96;
+            height: 30%;
+            width: 90%;
+            margin-left: 5%;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+
+        }
+
+        /* input box */
+        .input-box {
+            background-color: #5F8670;
+            height: 10%;
+            width: 80%;
+            margin-left: 9%;
+            margin-top: 10%;
+            font-size: 22px;
+            border-style: solid;
+        }
+
+        /* button */
+        .button {
+            background-color: #4CB9E7;
+            height: 10%;
+            width: 80%;
+            margin-left: 9%;
+            margin-top: 5%;
+            font-size: 22px;
+            border-style: solid
+        }
+    </style>
+    <!-- using script -->
+    <script>
+        // define function
+        function day() {
+            let day = document.getElementById("input").value;
+            if (day == 1) {
+                document.getElementById("display").innerHTML = "Today is monday";
+            } else if (day == 2) {
+                document.getElementById("display").innerHTML = "Today is tuesday";
+            } else if (day == 3) {
+                document.getElementById("display").innerHTML = "Today is wednesday";
+            } else if (day == 4) {
+                document.getElementById("display").innerHTML = "Today is thursday";
+            }
+            else if (day == 5) {
+                document.getElementById("display").innerHTML = "Today is friday";
+            }
+            else if (day == 6) {
+                document.getElementById("display").innerHTML = "Today is saturday";
+            }
+            else if (day == 7) {
+                document.getElementById("display").innerHTML = "Today is sunday";
+            } else {
+                document.getElementById("display").innerHTML = "Today is invaild";
+            }
+            console.log("Today is ");
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- container -->
+    <div class="container">
+        <div class="display" id="display"></div>
+        <input type="number" class="input-box" id="input" value="">
+        <button class="button" onclick="day()">Check Days</button>
+    </div>
+</body>
+
+</html>

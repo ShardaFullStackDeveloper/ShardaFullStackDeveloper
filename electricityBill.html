@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- internal style -->
+    <style>
+        /* box */
+        .box {
+            background-color: #9CAFAA;
+            height: 90vh;
+            width: 60vw;
+            margin-left: 20%;
+        }
+
+        /* display */
+        .display {
+            background-color: #50727B;
+            height: 30%;
+            width: 90%;
+            margin-left: 3%;
+            border-radius: 20px;
+            font-size: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* using h1 */
+        h1 {
+            text-align: center;
+            font-size: 32px;
+        }
+
+        /* input box */
+        .input-box {
+            background-color: #99BC85;
+            height: 10%;
+            width: 80%;
+            margin-left: 9%;
+            margin-top: 9%;
+            font-size: 22px;
+        }
+
+        /* sumbit */
+        .sumbit {
+            background-color: #2D9596;
+            height: 10%;
+            width: 80%;
+            margin-left: 9%;
+            margin-top: 5%;
+            font-size: 22px;
+
+        }
+    </style>
+    <!-- using script -->
+    <script>
+
+        function electricityBill() {
+            let units = document.getElementById("unit").value;
+            if (units < 50) {
+                bill = units * 0.5;
+            }
+            else if ((units > 51) && (units < 150)) {
+                bill = 50 * 0.5 + (units - 50) * 0.75;
+            }
+            else if ((units > 151) && (units < 250)) {
+                bill = 50 * 0.5 + 100 * 0.75 + (units - 150) * 1.25;
+            }
+            else if (units > 250) {
+                bill = 50 * 0.5 + 100 * 0.75 + 150 * 1.25 + (units - 250) * 1.50
+            }
+            document.getElementById("display").innerHTML = "Customer IDNO :-10001 </br>" + " Customer Name :- ABC </br>" + "Total bill = " + bill;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Electricity Bill</h1>
+        <div class="display" id="display"></div>
+        <input type="number" class="input-box" id="unit" value="" />
+        <button class="sumbit" onclick="electricityBill()">Check Bill</button>
+    </div>
+</body>
+
+</html>

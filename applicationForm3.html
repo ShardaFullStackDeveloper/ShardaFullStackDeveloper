@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- styling -->
+    <style>
+        body {
+            font-family: 'Hind', sans-serif;
+            font-family: 'Noto Serif', serif;
+        }
+
+        .middle {
+            background-color: #79AC78;
+            padding: 20px;
+        }
+
+        .box {
+            height: 30px;
+            width: 140px;
+        }
+
+        /* Media Query for mobile devices */
+        @media (max-width: 767px) {
+            body {
+             
+                font-size: 14px;
+              
+            }
+
+            .middle {
+              
+                padding: 10px;
+            }
+
+            .box {
+               
+                height: 25px;
+                width: 100px;
+            }
+        }
+    </style>
+    <!-- links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Noto+Serif:ital,wght@0,300;1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- main heading -->
+    <form action="./applicationForm4.html" class="middle">
+        <fieldset>
+            <legend>Enjoy Programming: :Personal Details</legend>
+            <!-- timning -->
+            <label>Preferred Timings:</label>
+            <input class="box" type="time" id="ptime">
+            <label for="time">to</label>
+            <input class="box" type="time" id="ptime">
+            </br>
+            </br>
+            <!-- date -->
+            <label>Preferred Batch Date:</label>
+            <input class="box" type="date">
+            <label for="date">to</label>
+            <input class="box" type="date">
+            </br>
+            </br>
+            <!-- DOB -->
+            <label for="Date of Birth">Date of Birth:</label>
+            <input class="box" type="date" id="DOB">
+            </br>
+            </br>
+            <!-- Email -->
+            <label for="Email">Email:</label>
+            <input class="box" type="text" id="Email">
+            </br>
+            </br>
+            <!-- Contact No -->
+            <label for="Contact">Contact No:</label>
+            <input class="box" type="number" id="number">
+            </br>
+            </br>
+            <!-- Communication Skill -->
+            <label for="Skill">Communication skill(out of 10):</label>
+            <input type="range" id="cskill">
+            </br>
+            </br>
+            <!-- Age -->
+            <label for="age">Age:</label>
+            <input class="box" type="number" id="num" max="30" min="20">
+            </br>
+            </br>
+            <!-- Tell something about yourself -->
+            <label for="feedback">Tell something about yourself</label>
+            <textarea id="About" style="height:100px; width: 300px;" placeholder></textarea>
+            </br>
+            </br>
+            <!-- Pick a batch -->
+            <label for="batch">Pick a batch</label>
+            <select id="batch" style="color:#183D3D;">
+                <!-- option group -->
+                <optgroup label="Senior">
+                    <option value="Proficient">Proficient</option>
+                    <option value="Ambitious">Ambitious</option>
+                </optgroup>
+                <!-- option group -->
+                <optgroup label="Junior">
+                    <option value="Visionary">Visionary</option>
+                    <option value="Schloar">Schloar</option>
+                </optgroup>
+            </select>
+            </br>
+            </br>
+            <!-- Sumbit tab -->
+            <button style="background-color: #445D48; height: 40px; width: 120px; font-size: 22px;" type="submit">Sumbit</button>
+
+        </fieldset>
+    </form>
+</body>
+
+</html>

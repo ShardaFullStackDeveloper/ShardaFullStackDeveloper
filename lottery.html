@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- internal styling -->
+    <style>
+        /* main */
+        .main {
+            background-color: #CCD3CA;
+            height: 90vh;
+            width: 50vw;
+            margin-left: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* display */
+        .display {
+            background-color: #2D9596;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* input box */
+        .input-box {
+            background-color: #F9F9E0;
+            height: 40px;
+            width: 80%;
+            display: flex;
+            align-self: center;
+            margin: 5px;
+            font-size: large;
+        }
+
+        /* button */
+        .button {
+            background-color: #A4CE95;
+            height: 40px;
+            width: 80%;
+            margin-left: 10%;
+            font-size: large;
+        }
+
+        /* loader */
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Media Query for mobile devices */
+        @media (max-width: 767px) {
+            .main {
+                width: 100vw;
+                margin-left: 0;
+                height: auto;
+            }
+
+            .display {
+                height: auto;
+                width: 100%;
+            }
+
+            .input-box {
+                width: 95%;
+                margin: 10px auto;
+                font-size: medium;
+               
+            }
+
+            .button {
+                width: 95%;
+                margin-left: 2.5%;
+                font-size: medium;
+             
+            }
+
+            .loader {
+                width: 60px;
+                height: 60px;
+                border-width: 8px;
+                
+            }
+        }
+    </style>
+    <script>
+        // function arithmaticExample(age){
+        //     let output = "Full ticket";
+        //     if (age <= 17 || age > 70 ){
+        //         output = "half ticket";
+        //     }
+        // if (age > 70){
+        //     output = "half ticket";
+
+        //         // }
+        //    document .getElementById("display").innerHTML= output;
+        // }
+
+        let coins = 100;
+
+        function startPlay() {
+            document.getElementById("loader").style.display = "block";
+            setTimeout(() => {
+                startLottery();
+            }, 1000);
+        }
+
+        function startLottery() {
+            document.getElementById("loader").style.display = "none";
+            let output = parseInt((Math.random() * 100) / 10);
+            let betCoins = document.getElementById("coins").value;
+            let betNumber = document.getElementById("input").value;
+            if (betCoins <= 0 || betNumber < 0) {
+                document.getElementById("display-text").innerHTML =
+                    "<BR/>Your Coins is " + coins;
+                return;
+            }
+            if (betCoins > coins) {
+                document.getElementById("display-text").innerHTML =
+                    "Check Your bet it's more than your coins";
+                return;
+            }
+
+            if (betNumber == output) {
+                coins += betCoins * 9;
+            } else {
+                coins -= betCoins;
+            }
+
+            document.getElementById("display-text").innerHTML =
+                "Lottery Number = " + output + "<BR/>Your Coins is = " + coins;
+            document.getElementById("display-text").style.color = "#000000";
+        }
+
+        function clearText() {
+            document.getElementById("display-text").innerHTML = "";
+        }
+
+        window.onload = function () {
+            startPlay();
+        };
+
+    </script>
+</head>
+
+<body style="margin: 0px;">
+    <!-- main section -->
+    <div class="main">
+        <div class="display" id="display">
+            <h1 class="display-text" id="display-text"></h1>
+            <!-- loader using -->
+            <div class="loader" id="loader"></div>
+
+        </div>
+        <!-- input text use -->
+        <input type="number" class="input-box" id="input" placeholder="Bet Number" />
+        <input type="number" class="input-box" id="coins" placeholder="Coins" />
+        <!-- button using -->
+        <div class="input-container">
+            <button class="button" onclick="startPlay()">Play</button>
+
+        </div>
+    </div>
+</body>
+
+</html>

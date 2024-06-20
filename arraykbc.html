@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>KBC QUIZ</title>
+    <!-- styling -->
+    <style>
+        /* start button on */
+        .start {
+            margin-left: 45%;
+            height: 50px;
+            width: 130px;
+            margin-top: 50px;
+            background-color: #3652AD;
+            font-size: larger;
+            color: white;
+            border-radius: 20px;
+        }
+
+        /* two */
+        .two {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* display */
+        .display {
+            background-color: #59B4C3;
+            height: 20%;
+            width: 80%;
+            margin-top: 30px;
+            margin-left: 10%;
+            border-radius: 30px;
+            border-style: solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* display text */
+        .display-text {
+            font-size: 33px;
+            margin-left: 6%;
+            color: white;
+
+        }
+
+        /* button */
+        .button {
+            height: 80px;
+            width: 400px;
+            margin-left: 15%;
+            margin-top: 50px;
+            border-radius: 30px;
+            background-color: #00337C;
+            font-size: 32px;
+            color: white;
+        }
+
+        /* Media Query for mobile devices */
+        @media (max-width: 767px) {
+            .start {
+                margin-left: 10%;
+
+                width: 80%;
+
+                margin-top: 20px;
+
+                font-size: medium;
+
+            }
+
+            .display {
+                width: 95%;
+
+                margin-top: 15px;
+
+                margin-left: 2.5%;
+                height: auto;
+                border-radius: 15px;
+            }
+
+            .display-text {
+                font-size: 24px;
+                margin-left: 3%;
+            }
+
+            .button {
+                width: 90%;
+
+                margin-left: 5%;
+                margin-top: 25px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+    </style>
+    <script>
+        // question using in array
+
+        let questions = [
+            // first question
+            {
+                question: "1.What does not grow on tree according to a popular Hindi saying?",
+                answer: ["A.Money", "B.Flowers", "C.Leaves", "D.Fruits"],
+                correct: 0
+            },
+            // 2nd question
+            {
+                question: "2.Who is the captain of Chennai super kings?",
+                answer: ["A.Sachin", "B.Virat Kohli", "C.M S Dhoni", "D.Dinesh Kartik"],
+                correct: 2
+            },
+            // 3rd question
+            {
+                question: "3.Which Of The Following Is The First Capital Of Rajasthan",
+                answer: ["A)Ajmer", "B) Chittorgarh ", "C)Jaisalmer", "D)Jaipur "],
+                correct: 0
+            },
+            // 4th question
+            {
+                question: "4. Name the National animal of India?",
+                answer: ["A.Lion", "B.Tiger", "C.Leopard", "D.Wolf"],
+                correct: 1
+            },
+            // 5th question
+            {
+                question: "5.Name the national flower of India?",
+                answer: ["A.Rose", "B.Lily", "C.Marigold", "D.Lotus"],
+                correct: 3
+            },
+
+            // 6th question
+            {
+                question: "6.Who is the first woman prime minister of India?",
+                answer: ["A.Narendra Modi", "B.Rahul Gandhi", "C.Indira Gandhi", "D.Rajiv Gandhi"],
+                correct: 2
+
+            },
+            // 7th question
+            {
+                question: "7.Name the National bird of India?",
+                answer: ["A.Parrot", "B.Pigeons", "C.Crow", "D.Peacock"],
+                correct: 3
+            },
+            // 8th question
+            {
+                question:"8."
+            }
+
+        ];
+
+        let currentQuestionIndex = 0;
+
+        // Corrected displayQuestion function
+        function displayQuestion() {
+            let q = questions[currentQuestionIndex];
+            document.getElementById("container").style.backgroundColor = "#59B4C3";
+            document.getElementById("display-text").innerHTML = q.question;
+            document.getElementById("answer-one").innerHTML = q.answer[0];
+            document.getElementById("answer-two").innerHTML = q.answer[1];
+            document.getElementById("answer-three").innerHTML = q.answer[2];
+            document.getElementById("answer-four").innerHTML = q.answer[3];
+        }
+
+
+        // hidden 
+        function on() {
+            document.getElementById("one").hidden = true;
+            document.getElementById("main-top").hidden = false;
+            displayQuestion();
+        }
+        // correct question set in condition
+        function answer(correctAnswer) {
+            setTimeout(() => {
+                if (questions[currentQuestionIndex].correct === correctAnswer) {
+                    document.getElementById("display-text").innerHTML = "Right Answer";
+                    document.getElementById("container").style.backgroundColor = "#65B741";
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < questions.length) {
+                        setTimeout(displayQuestion, 1000);
+                    } else {
+                        document.getElementById("display-text").innerHTML = "Congratulations! You've completed the quiz.";
+                    }
+                } else {
+                    document.getElementById("display-text").innerHTML =
+                        " Wrong Answer";
+
+                    document.getElementById("container").style.backgroundColor =
+                        "#FF0000";
+                    currentQuestionIndex = 0;
+                    setTimeout(displayQuestion, 1000);
+                }
+            }, 1000);
+        }
+
+
+
+
+    </script>
+</head>
+
+<body
+    style=" background-image: url(https://static-cdn.geekyants.com/article/47/2022-09-04/166229332635486.jpg); height: 100vh; width: 100pvw; background-size: cover;">
+    <!-- play button on -->
+    <button class="start" id="one" onclick="on()">LET'S PLAY</button>
+    <!-- main section -->
+    <div class="two" id="main-top" hidden="true">
+        <div class="display" id="container">
+            <h1 class="display-text" id="display-text"></h1>
+        </div>
+        <!-- 4th button -->
+        <button class="button" id="answer-one" onclick="answer(0)"></button>
+        <button class="button" id="answer-two" onclick="answer(1)"></button>
+        <button class="button" id="answer-three" onclick="answer(2)"></button>
+        <button class="button" id="answer-four" onclick="answer(3)"></button>
+    </div>
+
+</body>
+
+</html>

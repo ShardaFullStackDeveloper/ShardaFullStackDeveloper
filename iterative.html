@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- styling -->
+    <style>
+        /* main container */
+        .main-container {
+            background-color: grey;
+            height: 90vh;
+            width: 50vw;
+            margin-left: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* display */
+        .display {
+            background-color: aqua;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+        }
+
+        /* input */
+        .input-box {
+            background-color: #00425A;
+            height: 40px;
+            width: 80%;
+            color: white;
+            display: flex;
+            align-self: center;
+
+
+        }
+
+        /* button */
+        .button {
+            background-color: green;
+            height: 40px;
+            width: 80%;
+            margin-left: 10%;
+        }
+    </style>
+    <!-- using script -->
+    <script>
+
+        function displaytext(dressColor, age) {
+            let x = document.getElementById("input").value;
+            // using 1 to 10 
+            //     let output = "";
+            //     // let y = 0 ;
+            //     let y = 1;
+            //     while (y <= 10) {
+            //   let result = y * x;
+            //   output = output  + x + " * " + y + " = " + result;
+            //   output = output + "<br/>";
+            //   y = y + 1;
+            // }
+
+            // using * 
+            // while( y <= x){
+            //        let z= 0 ;
+            //        while (z < y ){
+            //         output = output + "*";
+            //         z = z + 1;
+            //        }
+            //        output = output + "<br/>";
+            //        y = y + 1;
+            //     } 
+            // using age
+
+            //     let age = prompt ("Enter Your Age");
+            //     age = Number (age);
+            //     if(age > 18){
+            //     document.getElementById("display").innerHTML = "you can vote";
+            //     document.getElementById("display").style.color= "green";
+            // } else{
+            //     document.getElementById("display").innerHTML = "you can't vote";
+            //     document.getElementById("display").style.color= "red";
+            // }
+
+            // using times of name
+            // let name = prompt("enter your times of name");
+            // let output = "";
+            // while (name > 0) {
+            //     output = output + "shraddha <br/>";
+            //     name = name - 1;
+            // }
+
+            // school
+            
+            let output = "Mount School";
+            if ((dressColor == "white" || dressColor == "red") && age < 14) {
+               output = "Mount School"
+            }else{
+                output= "Invaild"
+            }
+            document.getElementById("display").innerHTML = output;
+        }
+
+
+        // while (x > 0){
+        //    output = output + "Hello" + "<br/>";
+        //     x = x - 1;
+        // }
+
+
+        function Cleartext() {
+            document.getElementById("display").innerHTML = "";
+        }
+
+    </script>
+</head>
+
+<body style=" margin: 0px;">
+    <!-- main container -->
+    <div class="main-container">
+        <div class="display" id="display"></div>
+        <input type="number" class="input-box" id="input" />
+        <div class="input-container">
+            <button class="button" onmouseenter=" displaytext('red', 16)" onclick="Cleartext()">Click here</button>
+
+        </div>
+    </div>
+</body>
+
+</html>

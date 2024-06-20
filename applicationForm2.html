@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Internal Style -->
+    <style>
+        body {
+            font-family: 'Hind', sans-serif;
+            font-family: 'Noto Serif', serif;
+            padding: 20px;
+        }
+
+        /* top sec */
+        .Top-one {
+            background-color: #AAD9BB;
+        }
+
+        /* name sec */
+        .name {
+            height: 40px;
+            width: 200px;
+        }
+
+        /* Media Query for mobile devices */
+        @media (max-width: 767px) {
+            body {
+                font-family: 'Hind', sans-serif;
+
+                padding: 10px;
+
+            }
+
+            .name {
+                height: 35px;
+                /* Adjusted height for mobile */
+                width: 180px;
+                /* Adjusted width for mobile */
+            }
+        }
+    </style>
+    <!-- Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Noto+Serif:ital,wght@0,300;1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!--Main Section  -->
+    <form action="./applicationForm3.html" class="Top-one">
+        <fieldset>
+            <h2>Enjoy programming: Enter your Deatils</h2>
+            <!-- Name section-->
+            <label for="fname">FRIST NAME:</label>
+            <input class="name" type="text" id="fname">
+            </br>
+            </br>
+            <label for="lname">LAST NAME</label>
+            <input class="name" type="text" id="lname">
+            </br>
+            </br>
+            <!-- laptop section -->
+            <h2>What laptop do you own?</h2>
+            <input type="checkbox" name="laptop">
+            <label for="laptop">Windows</label>
+            </br>
+            <input type="checkbox" name="laptop">
+            <label for="laptop">Linux</label>
+            </br>
+            <input type="checkbox" name="laptop">
+            <label for="laptop">Mac</label>
+            </br>
+            <!-- education details -->
+            <h2>Select your education</h2>
+            <input type="radio" name="education">
+            <label for="Degree">Schooling</label>
+            </br>
+            <input type="radio" name="education">
+            <label for="Degree">Jr. College</label>
+            </br>
+            <input type="radio" name="education">
+            <label for="Degree">Graduation</label>
+            </br>
+            <input type="radio" name="education">
+            <label for="Degree">Post Graduation</label>
+            </br>
+            <input type="radio" name="education">
+            <label for="Degree">PHD</label>
+            </br>
+            <!-- button -->
+            <button style="background-color: #436850; width: 250px; height: 30px; font-size: 22px;" type="submit">Next</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>

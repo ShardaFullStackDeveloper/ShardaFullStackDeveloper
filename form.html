@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<style>
+    fieldset {
+        background-color: beige;
+    }
+
+    button {
+        color: blue;
+    }
+</style>
+
+<body style="padding: 100px;">
+    <form action="/action_page.php">
+        <fieldset>
+            <legend style="color: blue;">Sign in</legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname">
+            <br>
+            <br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname">
+            <br>
+            <br>
+            <label for="Email">Email:</label>
+            <input type="Email" id="Email" name="Email">
+            <br>
+            <br>
+            <label for="Date of Birth">Date of Birth</label>
+            <input type="date" id="DOB" name="DOB">
+            <br>
+            <br>
+            <label for="pass">Password</label>
+            <input type="password" id="pass">
+            <br>
+            <br>
+            <label for="city">Choose your city from list:</label>
+            <select name="city" id="city">
+                <option value="Nagpur">Nagpur</option>
+                <option value="katol">katol</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Warud">Warud</option>
+            </select>
+            <br>
+            <br>
+            <textarea id="feedback" name="feed" placeholder="Enter your feedback">
+</textarea>
+            <br>
+            <br>
+            <button type="submit" onclick="alert('Thank you')">submit</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>

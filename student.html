@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- external font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@600&family=Noto+Serif:ital,wght@0,300;1,300&display=swap"
+        rel="stylesheet">
+    <!-- styling -->
+    <title>Students Data Entry</title>
+    <style>
+        body {
+
+            font-family: 'Hind', sans-serif;
+            font-family: 'Noto Serif', serif;
+            padding: 20px;
+        }
+
+        .header {
+            margin-left: 35%;
+
+        }
+
+        button {
+            background-color: #59B4C3;
+            font-size: 26px;
+            margin-left: 10px;
+
+
+        }
+
+        form {
+
+
+            background-color: #58A399;
+            margin-top: 15px;
+            font-size: 22px;
+
+        }
+
+        .input {
+            height: 6vh;
+            width: 20vw;
+          
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .section {
+            height: 7vh;
+            width: 20vw;
+            font-size: 19px;
+
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .button {
+            height: 7vh;
+            width: 20vw;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        //  entry function
+        let student = [];
+        let students = [
+            ' <tr><td id="name"></td><td id="mail-id"></td><td id="con-no"></td></tr>',
+        ];
+
+        function entryFunction() {
+            console.log("entryFunction");
+            document.getElementById("input").hidden = false;
+            document.getElementById("entry").hidden = true;
+        }
+
+        // showdata
+        function addData() {
+            let information = {};
+
+            information["firstName"] = document.getElementById("first-name").value;
+            information["lastName"] = document.getElementById("last-name").value;
+            information["contactNo"] = document.getElementById("phone-no").value;
+            information["DOB"] = document.getElementById("birth-day").value;
+            information["email"] = document.getElementById("email-id").value;
+            information["education"] = document.getElementById("edu-cation").value;
+            information["address"] = document.getElementById("address-l").value;
+            information["rollNo"] = document.getElementById("roll").value;
+            information["communicationSkill"] = document.getElementById("range").value;
+            ;
+
+            student.push(information);
+
+            console.log("ENTRY  ", student);
+            showData();
+        }
+
+        function listFunction() {
+            document.getElementById("input").hidden = true;
+            document.getElementById("entry").hidden = false;
+            showData();
+        }
+
+        function showData() {
+            let tableOutput = "<table>";
+
+            tableOutput += "<thead><tr><th>Name</th><th>Email</th><th>Date of Birth</th><th>Contact No</th><th>Education</th><th>Address</th><th>Roll No</th><th>Communication Skill</th></tr></thead>";
+
+            for (let i = 0; i < student.length; i++) {
+                let output = student[i];
+
+
+
+                let outputString =
+                    '<tr><td class="name">' +
+                    output.firstName + " " + output.lastName +
+                    '</td><td class="mail-id">' +
+                    output.email +
+                    "</td><td class='dob'>" +
+                    output.DOB +
+                    "</td><td>" +
+                    output.contactNo +
+                    "</td><td>" +
+                    output.education +
+                    "</td><td>" +
+                    output.address +
+                    "</td><td>" +
+                    output.rollNo +
+                    "</td><td>" +
+                    output.communicationSkill +
+                    "</td></tr>";
+                tableOutput += outputString;
+                console.log("showData", output);
+            }
+
+            tableOutput += "</table>";
+
+            document.getElementById("show-info").innerHTML = tableOutput;
+        }
+
+
+        window.onload = function () {
+            entryFunction();
+        };
+    </script>
+    <!-- Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
+</head>
+
+<body style="margin: 0">
+
+    <div class="header">
+        <button class="start-button" onclick="entryFunction()">ENTRY FORM</button>
+        <button class="start-button" onclick="listFunction()">LIST</button><br />
+    </div>
+    <br>
+
+    <div id="input">
+        <form>
+            <fieldset>
+                <legend>
+                    <h1>Enjoy Programming : Enter Your Deatils</h1>
+                </legend>
+                <!-- First Name -->
+                <label>FIRST NAME:-</label>
+                <input class="input" type="text" id="first-name" name="fname"
+                    placeholder="ENTER YOUR FIRST NAME" /><br />
+                <br />
+                <!-- Last name -->
+                <label>LAST NAME:-</label>
+                <input class="input" type="text" id="last-name" name="lname"
+                    placeholder="ENTER YOUR  LAST NAME" /><br />
+                <br />
+             
+                <!-- Education  -->
+                <label>EDUCATION:-</label>
+                <select name="education" id="edu-cation" class="section">
+                    <optgroup label="Education">
+                        <option value="pro"> Proficient</option>
+                        <option value="SCHOOL">School</option>
+                        <option value="JR. COLLAGE">Jr. Collage</option> p;
+                        <option value="GRADUATION">Graduation</option>
+                        <option value="PG">PG</option>
+                    </optgroup>
+                </select>
+                <br>
+                <br>
+                <!-- Contact Number -->
+                <label>CONTACT NO:-</label>&nbsp;
+                <input class="input" type="number" id="phone-no" name="phone" /><br />&nbsp;
+                <br />
+                <!-- Address -->
+                <label>ADDRESS:</label>&nbsp;
+                <input class="input" type="text" id="address-l" name="address" /><br />&nbsp;
+                <br />
+                <!-- Roll No. -->
+                <label>ROLL NO:-</label>
+                <input class="input" type="number" id="roll" name="roll" /><br />&nbsp;
+                <br />
+
+                <!-- Email -->
+                <label>EMAIL ID:-</label>&nbsp; &nbsp;
+                <input class="input" type="email" id="email-id" name="email" placeholder="abd@gmail.com" /><br />
+                <br />
+                <!-- DOB -->
+                <label>Date of Birth:-</label>&nbsp; &nbsp;
+                <input class="input" type="date" id="birth-day" name="birth" /><br />
+                <!--Communication skill  -->
+                <label>COMMUNICATION SKILL:-</label>&nbsp; &nbsp;
+                <input type="range" id="range" name="range" /><br />
+                <br />
+
+
+
+                <button class="button" type="button" onclick="addData()">SUBMIT</button>
+            </fieldset>
+        </form>
+
+    </div>
+
+    <div id="entry">
+        <h1>Student Data Information</h1>
+        <table id="show-info">
+            <!-- heading row -->
+        </table>
+    </div>
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

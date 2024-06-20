@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #display {
+            background-color: pink;
+            height: 200px;
+            width: 100%;
+            font-size: 20px;
+
+        }
+
+        #sumbit {
+            width: 100px;
+            height: 40px;
+            background-color: palegreen;
+            margin-left: 30px;
+        }
+
+        .main {
+            background-color: aqua;
+            height: 60vh;
+            width: 60vw;
+            margin-left: 20%;
+        }
+    </style>
+    <script>
+        let total = 0 ;
+       
+        function add() {
+           let  a = Number ( document.getElementById("numberone").value);
+           let  b = Number (document.getElementById("numbertwo").value);
+         total = total + a + b;
+            document.getElementById("display").innerHTML = "Total is = " + total;
+
+        }
+
+        function subtraction() {
+            let  a = Number ( document.getElementById("numberone").value);
+           let  b = Number (document.getElementById("numbertwo").value);
+         total = total - a - b;
+            document.getElementById("display").innerHTML = "Total is = " + total;
+
+        }
+        function multiplication() {
+            let  a = Number ( document.getElementById("numberone").value);
+           let  b = Number (document.getElementById("numbertwo").value);
+         total = total + a * b;
+            document.getElementById("display").innerHTML = "Total is = " + total;
+
+        }
+        function division() {
+            let  a = Number ( document.getElementById("numberone").value);
+           let  b = Number (document.getElementById("numbertwo").value);
+         total = total + a / b;
+            document.getElementById("display").innerHTML = "Total is = " + total;
+
+        }
+        function clearfunction() {
+            total =0;
+            document.getElementById("display").innerHTML = "";
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <h1 id="display"></h1>
+        <input type="text" id="numberone" value="" style="width: 150px;
+            height: 38px; margin-left: 30px;" />
+        <input type="text" id="numbertwo" value="" style="width: 150px;
+            height: 38px; margin-left: 30px;" />
+        <br />
+        <br />
+        <button id="sumbit" onclick="add()">Add</button>
+        <button id="sumbit" onclick="subtraction()">Sub</button>
+        <button id="sumbit" onclick="multiplication()">Multiply</button>
+        <button id="sumbit" onclick="division()">Division</button>
+        <button id="sumbit" onclick="clearfunction()">Clear</button>
+
+    </div>
+</body>
+
+</html>

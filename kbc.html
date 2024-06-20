@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>KBC QUIZ</title>
+    <!-- styling -->
+    <style>
+        /* start button on */
+        .start {
+            margin-left: 45%;
+            height: 50px;
+            width: 130px;
+            margin-top: 50px;
+            background-color: #3652AD;
+            font-size: larger;
+            color: white;
+            border-radius: 20px;
+        }
+
+        /* two */
+        .two {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* display */
+        .display {
+            background-color: #59B4C3;
+            height: 20%;
+            width: 80%;
+            margin-top: 30px;
+            margin-left: 10%;
+            border-radius: 30px;
+            border-style: solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* display text */
+        .display-text {
+            font-size: 33px;
+            margin-left: 6%;
+            color: white;
+
+        }
+
+        /* button */
+        .button {
+            height: 80px;
+            width: 400px;
+            margin-left: 15%;
+            margin-top: 50px;
+            border-radius: 30px;
+            background-color: #00337C;
+            font-size: 32px;
+            color: white;
+        }
+
+        /* Media Query for mobile devices */
+        @media (max-width: 767px) {
+            .start {
+                margin-left: 10%;
+
+                width: 80%;
+
+                margin-top: 20px;
+
+                font-size: medium;
+
+            }
+
+            .display {
+                width: 95%;
+
+                margin-top: 15px;
+
+                margin-left: 2.5%;
+                height: auto;
+                border-radius: 15px;
+            }
+
+            .display-text {
+                font-size: 24px;
+                margin-left: 3%;
+            }
+
+            .button {
+                width: 90%;
+
+                margin-left: 5%;
+                margin-top: 25px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body
+    style=" background-image: url(https://static-cdn.geekyants.com/article/47/2022-09-04/166229332635486.jpg); height: 100vh; width: 100pvw; background-size: cover;">
+    <!-- play button on -->
+    <button class="start" id="one" onclick="on()">LET'S PLAY</button>
+    <!-- main section -->
+    <div class="two" id="main-top" hidden="true">
+        <div class="display" id="container">
+            <h1 class="display-text" id="display-text"></h1>
+        </div>
+        <!-- 4th button -->
+        <button class="button" id="answer-one" onclick="answer(1)"></button>
+        <button class="button" id="answer-two" onclick="answer(2)"></button>
+        <button class="button" id="answer-three" onclick="answer(3)"></button>
+        <button class="button" id="answer-four" onclick="answer(4)"></button>
+    </div>
+    <script src="./Js_Files/kbc.js"></script>
+</body>
+
+</html>

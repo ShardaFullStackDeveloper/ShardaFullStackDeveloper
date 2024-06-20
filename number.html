@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- title -->
+    <title>Scale</title>
+</head>
+<!-- internal -->
+<style>
+    /* main */
+    .main {
+        background-color: #FF8F8F;
+        height: 80vh;
+        width: 60vw;
+        margin-left: 20%;
+        padding: 20px;
+    }
+
+    /* display */
+    .display {
+        background-color: #A8CD9F;
+        height: 30%;
+        width: 95%;
+        border-radius: 20px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+
+    }
+
+    /* input */
+    .input {
+        background-color: #8ADAB2;
+        height: 10%;
+        width: 80%;
+        margin-left: 9%;
+        margin-top: 10%;
+        font-size: 22px;
+    }
+
+    /* button */
+    .sumbit {
+        background-color: #5D9C59;
+        height: 10%;
+        width: 80%;
+        margin-left: 9%;
+        margin-top: 5%;
+        font-size: 22px;
+    }
+
+    
+</style>
+<!-- using script -->
+<script>
+
+    // function call
+    function number() {
+        let x = document.getElementById("input-box").value;
+        if (x == 0) {
+            document.getElementById("display").innerHTML = "This number is zero"
+        } else if (x >= 0) {
+            document.getElementById("display").innerHTML = "This number is positive"
+        } else if (x <= 0) {
+            document.getElementById("display").innerHTML = "This number is negative"
+        }
+        console.log("This number is");
+
+    }
+</script>
+</head>
+
+<body style="margin: 0px;">
+    <!-- main -->
+    <div class="main">
+        <div class="display" id="display"></div>
+        <input type="number" class="input" id="input-box" value="" />
+        <button class="sumbit" onclick="number()">Check Number</button>
+    </div>
+</body>
+
+</html>

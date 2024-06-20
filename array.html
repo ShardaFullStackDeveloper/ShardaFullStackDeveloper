@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- internal styling -->
+    <style>
+        /* main */
+        .main {
+            background-color: #CCD3CA;
+            height: 90vh;
+            width: 50vw;
+            margin-left: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* display */
+        .display {
+            background-color: #2D9596;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+
+        }
+
+        /* input box */
+        .input-box {
+            background-color: #F9F9E0;
+            height: 40px;
+            width: 80%;
+            display: flex;
+            align-self: center;
+            margin: 5px;
+            font-size: large;
+        }
+
+        /* button */
+        .button {
+            background-color: #A4CE95;
+            height: 40px;
+            width: 80%;
+            margin-left: 10%;
+            font-size: large;
+        }
+    </style>
+    <script>
+        // input a number
+        function reverseNo() {
+            let boxs = [];
+            for (let a = 0; a < 3; a++) {
+                boxs[a] = prompt("Enter value for" + a + "index =");
+            }
+            // output 
+            for (let b = 2; b >= 0; b--) {
+                console.log("The result is ", boxs[b]);
+            }
+           
+        }
+
+    </script>
+</head>
+
+<body style="margin: 0px;">
+    <!-- main section -->
+    <div class="main">
+        <div class="display" id="display">
+            <!-- loader using -->
+            <!-- <div class="loader" id="loader"></div> -->
+        </div>
+        <!-- input text use -->
+        <!-- <input type="number" class="input-box" id="input-one" placeholder="Bet Number" />
+        <input type="number" class="input-box" id="input-two" placeholder="Coins" /> -->
+        <!-- button using -->
+        <div class="input-container">
+            <button class="button" onclick="reverseNo()">Play</button>
+
+        </div>
+    </div>
+</body>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- internal styling -->
+    <style>
+        /* main */
+        .main {
+            background-color: #CCD3CA;
+            height: 90vh;
+            width: 50vw;
+            margin-left: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* display */
+        .display {
+            background-color: #2D9596;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+
+        }
+
+        /* input box */
+        .input-box {
+            background-color: #F9F9E0;
+            height: 40px;
+            width: 80%;
+            display: flex;
+            align-self: center;
+            margin: 5px;
+            font-size: large;
+        }
+
+        /* button */
+        .button {
+            background-color: #A4CE95;
+            height: 40px;
+            width: 80%;
+            margin-left: 10%;
+            font-size: large;
+        }
+
+        /* loader
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        } */
+    </style>
+    <script>
+        // let coins = 100;
+        // function startPlay(){
+        //     document.getElementById("loader").style.display = "block";
+        //     setTimeout(()=>{
+        //     playLottery()
+        //     },1000);
+        // }
+        // function playLottery(){
+        //     document.getElementById("loader").style.display ="none" ;
+        //     let output = parseInt((Math.random * 100) / 10);
+        //     let betNumber = document.getElementById("input").value;
+        //     let betCoins = document.getElementById("coins").value;
+        //     if (betCoins > coins){
+        //         document.getElementById("display- text").innerHTML =
+        //         "Check Your bet it's more than your coins";
+        //         return;
+        //     }
+        //     if (betNumber == output) {
+        //         coins += betCoins * 9;
+        //     } else {
+        //         coins -= betCoins;
+        //     }
+        //     document.getElementById("display-text").innerHTML =
+        //   "Lottery Number = " + output + "<BR/>Your Coins is " + coins;
+        // }
+
+
+
+        // function myFunction(paraOne, paraTwo) {
+        // parameter define
+
+        // let xvariable = 123 ;
+        // console.log("The Result___", paraOne , paraTwo , xvariable);
+
+        // second type box
+
+        // let a = document.getElementById("input").value;
+        // let b = document.getElementById("coins").value;
+        // console.log("The Result___", a, b);
+        // }
+
+        // function myFunction() {
+        //     // input
+        //     let one = Number(document.getElementById("input-one").value);
+        //     let two = Number(document.getElementById("input-two").value);
+
+        //     // process
+
+        //     let three = process('add', one, two);
+        //     output(three);
+        // }
+
+        // function process(action, noOne, noTwo) {
+        //     let result = 0;
+        //     // noOne = Number(noOne);
+        //     // noTwo = Number(noTwo);
+        //     if (action == "add") {
+        //         result = noOne + noTwo;
+        //     } else if (action == "sub") {
+        //         result = noOne - noTwo;
+        //     } else if (action == "mul") {
+        //         result = noOne * noTwo;
+        //     } else if (action == "div") {
+        //         result = noOne / noTwo;
+        //     } else {
+        //         result = "invaild";
+        //     }
+
+        //     console.log("The Result is ", result);
+        //     return result;
+        // }
+
+        // function output(result) {
+        //     document.getElementById("display").innerHTML = result;
+        //     console.log("OUTPUT", result);
+
+        // }
+        // function playMusic() {
+        //     sa();
+        //     re();
+        // }
+        // function sa() {
+        //     console.log("SA");
+        // }
+        // function re() {
+        //     console.log("RE");
+        // }
+        // function gg() {
+        //     console.log("GG");
+        // }
+        // function mm() {
+        //     console.log("MM")
+        // // }
+        // function remainingDays() {
+        //     let x = prompt("ENTER YOUR AGE")
+        //     let y = Number(x)
+        //     let z = 50 - y;
+        //     let days = z * 365;
+        //     document.getElementById("display").innerHTML = days + " Remaining Days  ";
+
+        // }
+        // function remainingDays() {
+        //     // let x = prompt("ENTER YOUR AGE");
+        //     let a = 123;
+        //     let b = a.toString();
+        //    console.log("Print  ", a ,b);
+
+
+        //     document.getElementById("display").innerHTML =  b +"total";
+        // }
+
+
+        function play() {
+            let y = prompt("What table you want");
+            input = Number("y");
+            let output = "";
+            let x = 1;
+            while (x <= y) {
+              let output = "";
+              let z = 1;
+              output = "*"
+            while (z <= x){
+                output += "*";
+                z++;
+            }
+
+            console.log("Check star", output);
+            x++;
+            document.getElementById("display").innerHTML = output;
+        }
+
+        }
+
+        // function leapYear() {
+        //     let year = prompt("Enter a year");
+        //     a = Number(input);
+        //     let output = "";
+        //     if (a % 400 == 0) {
+        //         output = "leap year";
+        //     } else if (a % 100 == 0) {
+        //         output = "not a leap year";
+        //     }
+        //     document.getElementById("display").innerHTML = output;
+        //     console.log("year", output);
+        // }
+
+        // find 5 number
+        // function playDigit() {
+        //     let total = 0;
+        //     let one = 0;
+        //     while (one <= 5) {
+        //         total = total + Number(prompt("Enter a number" + one + "number = "));
+        //         one++;
+        //     }
+        //     document.getElementById("display").innerHTML = total;
+        //     console.log("vaule a ", total)
+
+
+        // }
+
+
+        // use do while
+
+        // function playDigit() {
+        //     let total = 0;
+        //     let input = 20;
+        //     do {
+        //         input = Number(prompt("enter no "+" = "));
+        //         total = total+input;
+
+        //     } while (input != 0);
+        //     document.getElementById("display").innerHTML = total;
+        // }
+
+        // for
+
+        // function playDigit() {
+
+        //     for (let a = 1; a <= 5; a++)
+        //         console.log(a);
+        // }
+
+        // using array
+        // function playDigit() {
+        //     let inputs = [11, 22, 33];
+        //     console.log("The input are", input[1], input[1], input[2]);
+        // }
+
+        //using while in the array 
+        // function playDigit() {
+        //     let inputs = [];
+        //     // inputs = [10, 20, 30, 40, 50, 60, 70, 80];
+
+        //     for (let a = 0; a < 5; a++){
+        //         let pick = prompt("enter a number ");
+        //         inputs .push(pick)
+        //     }
+
+        //         let index = 0;
+        //     while (index < inputs.length) {
+        //         let output = "Check the number list = " + index + "is" + inputs[index];
+        //         console.log(output);
+        //         index++;
+        //     }
+        //     document.getElementById("display").innerHTML = inputs;
+        // }
+
+        // add 5 number
+
+
+        // object oriented
+        // function playDigit() {
+        //     let student = {};
+        //     // let student = { firstName: "shraddha", lastName: "sawarkar", address: " At-Katol", };
+        //     student["firstName"] = "shraddha"
+        //     student["lastName"] = prompt("Enter your Last name = ");
+        //     console.log("The Student Information is = ",
+        //         student.firstName,
+        //         "LastName = ", student.lastName,
+        //         "address =", student.address
+        //     );
+
+        // }
+
+
+        // function playDigit() {
+        //     let studentData = {};
+        //     let a = 0;
+        //     while (a < 3) {
+        //         studentData["firstname"] = prompt("Enter your First Name");
+        //         studentData["lastName"] = prompt("Enter Your Last Name");
+        //         console.log(studentData);
+        //         a++;
+        //     }
+        //     let i = 0;
+        //     while (i < studentData.length) {
+        //         console.log("firstName=",studentData.firstname + "lastName=",studentData.lastName);
+            
+        //         i++;
+        //     }
+
+        // }
+
+    </script>
+</head>
+
+<body style="margin: 0px;">
+    <!-- main section -->
+    <div class="main">
+        <div class="display" id="display">
+            <!-- loader using -->
+            <!-- <div class="loader" id="loader"></div> -->
+        </div>
+        <!-- input text use -->
+        <input type="number" class="input-box" id="input-one" placeholder="Bet Number" />
+        <input type="number" class="input-box" id="input-two" placeholder="Coins" />
+        <!-- button using -->
+        <div class="input-container">
+            <button class="button" onclick="playDigit()">Play</button>
+
+        </div>
+    </div>
+</body>
+
+</html>

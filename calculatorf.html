@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- title -->
+    <title>Calculator</title>
+    <!-- styling -->
+    <style>
+        /* main */
+        .main {
+            background-color: #242629;
+            height: 80vh;
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+            margin-left: 30%;
+            margin-top: 80px;
+        }
+
+        /* display */
+        .top {
+            background-color: #636569;
+            height: 100%;
+            width: 100%;
+            text-align: right;
+            font-size: 30px;
+
+
+        }
+
+        /* row section */
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            height: 100%;
+            width: 100%;
+            background-color: #989ca3;
+
+        }
+
+        /* one */
+        .one {
+            background-color: #61656b;
+            border-style: solid;
+            border-width: 1px;
+
+        }
+
+        /* button */
+        button {
+            height: 100%;
+            width: 100%;
+            background-color: #3c3d40;
+            font-size: 22px;
+        }
+
+        /* last row */
+        .lastrow {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background-color: #3c3d40;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* 4th button color */
+        .color {
+            background-color: #f29a02;
+        }
+    </style>
+    <script>
+
+        let total = 0;
+        let displayString = "";
+        let action = 0;
+        function showresult() {
+            if (action == 1) {
+                total = total + Number(displayString);
+            }
+            else if (action == 2) {
+                total = total % Number(displayString);
+            }
+            else if (action == 3) {
+                total = total / Number(displayString);
+            }
+
+            else if (action == 4) {
+                total = total - Number(displayString);
+            }
+            else if (action == 5) {
+                total = total * Number(displayString);
+            }
+            displayString = total;
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+
+        function clearFunction() {
+
+            total = 0;
+            displayString = "";
+            document.getElementById("display").innerHTML = "";
+        }
+
+        function numbertype(passnumber) {
+            displayString = displayString + passnumber.toString();
+            document.getElementById("display").innerHTML = displayString;
+
+        }
+        function add() {
+            total = Number(displayString);
+            displayString = "";
+            action = 1;
+            document.getElementById("display").innerHTML = displayString;
+
+        }
+        function backspace() {
+            displayString = displayString.substring(0, displayString.length - 1);
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function percent() {
+            total = Number(displayString);
+            displayString = "";
+            action = 2;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function division() {
+            total = Number(displayString);
+            displayString = "";
+            action = 3;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function sub() {
+            total = Number(displayString);
+            displayString = "";
+            action = 4;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function multiply() {
+            total = Number(displayString);
+            displayString = "";
+            action = 5;
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+    </script>
+</head>
+
+<body
+    style="background-image: url(https://www.shutterstock.com/image-photo/passbook-calculator-japanese-money-written-260nw-2326742479.jpg);background-size: cover">
+    <!-- main -->
+    <div class="main">
+        <!-- top -->
+        <div class="top" id="display"></div>
+        <!-- first row -->
+        <div class="row">
+            <!-- 1st button -->
+            <div class="one"><button onclick="clearFunction()">AC</button></div>
+            <!-- 2nd button -->
+            <div class="one" onclick="backspace()"><button>☒</button></div>
+            <!-- 3rd button -->
+            <div class="one" onclick="percent()"><button>%</button></div>
+            <!-- 4th button -->
+            <div class="one" onclick="division ()"><button class="color">/</button></div>
+
+        </div>
+        <!-- 2nd row -->
+        <div class="row">
+            <!-- 1st button -->
+            <div class="one"><button onclick="numbertype(7)">7</button></div>
+            <!-- 2nd button -->
+            <div class="one"><button onclick="numbertype(8)">8</button></div>
+            <!-- 3rd button -->
+            <div class="one"><button onclick="numbertype(9)">9</button></div>
+            <!-- 4th button -->
+            <div class="one"><button class="color" onclick="multiply()">*</button></div>
+        </div>
+        <!-- 3rd row -->
+        <div class="row">
+            <!-- 1st button -->
+            <div class="one"><button onclick="numbertype(4)">4</button></div>
+            <!-- 2nd button -->
+            <div class="one"><button onclick="numbertype(5)">5</button></div>
+            <!-- 3rd button -->
+            <div class="one"><button onclick="numbertype(6)">6</button></div>
+            <!-- 4th button -->
+            <div class="one"><button class="color" onclick="add()">+</button></div>
+        </div>
+        <!-- 4th row -->
+        <div class="row">
+            <!-- 1st button -->
+            <div class="one"><button onclick="numbertype(1)">1</button></div>
+            <!-- 2nd button -->
+            <div class="one"><button onclick="numbertype(2)">2</button></div>
+            <!-- 3rd button -->
+            <div class="one"><button onclick="numbertype(3)">3</button></div>
+            <!-- 4th button -->
+            <div class="one"><button class="color" onclick="sub()">-</button></div>
+        </div>
+        <!-- 5th row -->
+        <div class="lastrow">
+            <div class="one"><button onclick="numbertype(0)">0</button></div>
+            <!-- 2nd button -->
+            <div class="one"><button onclick="numbertype('00')">00</button></div>
+            <!-- 3rd button -->
+            <div class="one"><button class="color" onclick="showresult()">=</button></div>
+        </div>
+
+    </div>
+</body>
+
+</html>

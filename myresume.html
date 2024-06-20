@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Resume</title>
+    <!-- internal style -->
+    <style>
+        .main {
+            background-color: white;
+            height: 50vh;
+            width: 50vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        /* section one */
+        .one {
+            background-color: gray;
+            margin-left: 100px;
+            display: grid;
+            grid-template-rows: 15%;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        /* section two */
+        .two {
+            background-color: white;
+            padding-right: 100px;
+            display: grid;
+            grid-template-rows: 15%;
+            border-style: solid;
+            padding-right: 1px;
+            border-width: 2px;
+        }
+
+        /* left side */
+        .top {
+            background-color: #607274;
+        }
+
+        /* image section */
+        .image {
+            height: 100px;
+            width: 110px;
+            border-radius: 50px;
+            margin: 5px;
+            margin-left: 50px;
+        }
+
+        /*details sec  */
+        .title {
+            margin-left: 20px;
+        }
+
+        /*  */
+        .image-one {
+            height: 30px;
+            width: 30px;
+            margin-left: 20px;
+        }
+
+        /* use for heading */
+        .head {
+            margin-left: 10px;
+        }
+
+        /* use for middle point */
+        .p {
+            text-align: center;
+            border-style: solid;
+            height: 40px;
+            width: 100%;
+            border-width: 1px;
+        }
+
+      
+       
+
+    </style>
+</head>
+
+<body>
+   
+
+        <div class="main">
+            <!-- section one -->
+            <div class="one">
+                <!-- middle  -->
+                <div class="top">
+                    <!-- image -->
+                    <img class="image"
+                        src="data:image/jpeg;base64,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">
+                    <!-- title -->
+                    <h1 class="title">Contact</h1>
+                    <hr>
+                    <!-- perosnal Detail & link -->
+                    <h3><img class="image-one" src="./images/call.png"> 7796816790
+                        <br>
+                        <img class="image-one" src="./images/email.png"> shardasawarkar89@gmail.com
+                        <br>
+                        <img class="image-one" src="./images/location.png"> Katol , Maharashtra
+                        <br>
+                        <img class="image-one" src="./images/github.png"><a
+                            href="https://github.com/ShardaFullStakeDeveloper/Sharda-htmlproject">Github ID</a>
+                    </h3>
+                    <hr>
+                    <!-- language section -->
+                    <h2 class="title">Language Known :-</h2>
+
+                    <h3 class="head">C, Java, Swift, Javasrcipt, Paython</h3>
+                    <hr>
+                    <!-- ide -->
+                    <h3 class="title">IDE :-</h3>
+                    <h3 class="head">Visual Studio Code, Anroid Studio</h3>
+                    <hr>
+                    <!-- hepler tool -->
+                    <h2 class="title">Helper Known:-</h2>
+                    <h3 class="head">Color Hunt, Google Font</h3>
+                    <hr>
+                    <!-- use tool -->
+                    <h2 class="title">Tool Use for Development:-</h2>
+                    <h3 class="head">Jira, Github, Postman, Figma </h3>
+                </div>
+            </div>
+            <!-- section two -->
+            <div class="two">
+                <!-- middle two -->
+                <div class="top">
+                    <!-- name -->
+                    <h1 class="title">Sharda Parshuram Sawarkar</h1>
+                    <br>
+                    <br>
+                    <!-- Skill -->
+                    <h2 class="p">Web Development</h2>
+                    <h3 class="head">HTML, CSS, Javascript, React, Web Design Standard, Web Testing</h3>
+                    <h2 class="p">Mobile Development</h2>
+                    <h3 class="head">Native Anroid Development, IOS Development, React Native, Mobile Testing</h3>
+                    <h2 class="p">Middle Layer</h2>
+                    <h3 class="head">Node JS, API Testing, Express JS</h3>
+                    <h2 class="p">Database</h2>
+                    <h3 class="head">SQL, Database Design, Database Testing, </h3>
+                    <h2 class="p">Automation</h2>
+                    <h3 class="head">Sareen, Cypress</h3>
+                    <!-- education details -->
+                    <h2 class="p">Education Details</h2>
+                    <h3 class="head">Matser of Business Administration</h3>
+                </div>
+            </div>
+    
+</body>
+
+</html>

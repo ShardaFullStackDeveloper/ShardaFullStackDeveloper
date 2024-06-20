@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* main */
+        .main {
+            background-color: whitesmoke;
+            height: 60vh;
+            width: 40vw;
+            display: grid;
+            grid-template-rows: 1fr 4fr;
+            margin-left: 30%;
+            margin-top: 100px;
+        }
+
+        /* one */
+        .one {
+            background-color: #EEEDEB;
+            border-style: solid;
+            border-width: 1px;
+            text-align: right;
+        }
+
+        /* display */
+        #display {
+            background-color: #EEEDEB;
+            height: 40%;
+            width: 100%;
+            padding-top: 50px;
+        }
+
+        /* mid  */
+        .mid {
+            background-color: #EEEDEB;
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+
+        /* button Tab */
+        #button {
+            background-color: #B4B4B8;
+            height: 100%;
+            width: 100%;
+            font-size: 29px;
+        }
+
+        /* botton  */
+        .bottom {
+            height: 20%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr;
+        }
+
+        /* two */
+        .two {
+            height: 100%;
+            width: 100%;
+            background-color: #EEEDEB
+        }
+    </style>
+    <script>
+
+        let total = 0;
+        let displayString = "";
+        let action = 0;
+        function showresult() {
+            if (action == 1) {
+                total = total + Number(displayString);
+            }
+            else if (action == 2) {
+                total = total % Number(displayString);
+            }
+            else if (action == 3) {
+                total = total / Number(displayString);
+            }
+
+            else if (action == 4) {
+                total = total - Number(displayString);
+            }
+            else if (action == 5) {
+                total = total * Number(displayString);
+            }
+            displayString = total;
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+
+        function clearFunction() {
+            total = 0;
+            displayString = "";
+            document.getElementById("display").innerHTML = "";
+        }
+
+        function numbertype(passnumber) {
+            displayString = displayString + passnumber.toString();
+            document.getElementById("display").innerHTML = displayString;
+
+            if (passnumber == 7) {
+                document.getElementById("display").style.backgroundColor = "pink";
+            }
+            else if (passnumber == 8) {
+                document.getElementById("display").style.backgroundColor = "green";
+            }
+            else if (passnumber == 9) {
+                document.getElementById("display").style.backgroundColor = "#FF3EA5";
+            }
+
+            else {
+                document.getElementById("display").style.backgroundColor = "#C5EBAA";
+            }
+        }
+        function add() {
+            total = Number(displayString);
+            displayString = "";
+            action = 1;
+            document.getElementById("display").innerHTML = displayString;
+
+        }
+        function backspace() {
+            displayString = displayString.substring(0, displayString.length - 1);
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function percent() {
+            total = Number(displayString);
+            displayString = "";
+            action = 2;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function division() {
+            total = Number(displayString);
+            displayString = "";
+            action = 3;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function sub() {
+            total = Number(displayString);
+            displayString = "";
+            action = 4;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function multiply() {
+            total = Number(displayString);
+            displayString = "";
+            action = 5;
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+    </script>
+</head>
+
+<body>
+    <!-- main -->
+    <div class="main">
+        <!-- display -->
+        <div class="one " id="display"></div>
+        <!-- two -->
+        <div class="two">
+            <!-- mid -->
+            <div class="mid">
+                <!-- all clear button -->
+                <div><button id="button" onclick="clearFunction()">AC</button></div>
+                <!-- percentage button -->
+                <div><button id="button" onclick="percent()">%</button></div>
+                <!-- division -->
+                <div><button id="button" onclick="division ()">/</button></div>
+                <!-- backspace -->
+                <div><button id="button" onclick="backspace()">☒</button></div>
+                <!-- number button -->
+                <div><button id="button" onclick="numbertype(7)">7</button>
+                </div>
+                <div><button id="button" onclick="numbertype(8)">8</button></div>
+                <div><button id="button" onclick="numbertype(9)">9</button></div>
+                <!-- multiply button -->
+                <div><button id="button" onclick="multiply()">*</button></div>
+                <!-- number type -->
+                <div><button id="button" onclick="numbertype (4)">4</button></div>
+                <div><button id="button" onclick="numbertype(5)">5</button></div>
+                <div><button id="button" onclick="numbertype(6)">6</button></div>
+                <!-- sub button -->
+                <div><button id="button" onclick="sub()">-</button></div>
+                <!-- number buttom -->
+                <div><button id="button" onclick="numbertype (1)">1</button></div>
+                <div><button id="button" onclick="numbertype(2)">2</button></div>
+                <div><button id="button" onclick="numbertype (3)">3</button></div>
+                <!-- addition button -->
+                <div><button id="button" onclick="add()">+</button></div>
+            </div>
+            <!-- bottom button -->
+            <div class="bottom">
+                <div><button id="button" onclick="numbertype (0)">0</button></div>
+                <div><button id="button" onclick="numbertype (0)">00</button></div>
+                <!-- showresult button -->
+                <div><button id="button" onclick="showresult ()">=</button></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
