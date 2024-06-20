@@ -1,0 +1,61 @@
+.Container {
+    background-color: red;
+    height: 800px;
+    width: 1000px;
+}
+
+P {
+    font-size: 30px;
+    color: cadetblue;
+}
+
+@media (min-width: 500px) {
+    .Container {
+        background-color: blue;
+        height: 800px;
+        width: 1000px;
+    }
+
+    P {
+        font-size: 20px;
+        color: cadetblue;
+    }
+
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+    .Container {
+        background-color: palevioletred;
+        height: 800px;
+        width: 1000px;
+    }
+
+    P {
+        font-size: 19px;
+        color: cadetblue;
+    }
+
+}
+
+@media (min-width: 100px) and (max-width: 199px) {
+    .Container {
+        background-color: green;
+        height: 800px;
+        width: 1000px;
+
+    }
+
+    P {
+        font-size: 21px;
+        color: cadetblue;
+
+    }
+}
+
+.op {
+    height: 30px;
+    width: 50px;
+    background-color: chartreuse;
+    margin-left: 50px;
+    margin: 10px;
+}
