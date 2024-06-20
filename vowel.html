@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- styling -->
+    <style>
+        /* container */
+        .container {
+            height: 90vh;
+            width: 60vw;
+            margin-left: 20%;
+            padding-top: 20px;
+        }
+
+        /* display */
+        .display {
+            background-color: #496989;
+            height: 30%;
+            width: 90%;
+            margin-left: 5%;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+
+        }
+
+        /* input box */
+        .input-box {
+            background-color: #5F8670;
+            height: 10%;
+            width: 80%;
+            margin-left: 9%;
+            margin-top: 8%;
+            font-size: 22px;
+            border-style: solid;
+        }
+
+        /* button */
+        .button {
+            background-color: #4CB9E7;
+            height: 10%;
+            width: 80%;
+            margin-left: 9%;
+            margin-top: 12%;
+            font-size: 12px;
+            border-style: solid
+        }
+    </style>
+    <!-- using script -->
+    <script>
+        // function
+        function findVowel() {
+            let vowel = document.getElementById("input").value;
+            if ((vowel == "a") || (vowel == "A") || (vowel == "e") || (vowel == "E") || (vowel == "i") || (vowel == "I") || (vowel == "o") || (vowel == "O") || (vowel == "u") || (vowel == "U")) {
+                document.getElementById("display").innerHTML = "It is vowel";
+            } else {
+                document.getElementById("display").innerHTML = "It is Consonants";
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+  
+    <!-- container -->
+    <div class="container">
+        <div class="display" id="display"></div>
+        <input type="text" class="input-box" id="input" value="">
+        <button class="button" onclick="findVowel()">Check Vowels</button>
+    </div>
+</body>
+
+</html>

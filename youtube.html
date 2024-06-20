@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Internal style -->
+    <style>
+        .Box-one {
+            border-style: dotted;
+            width: 300px;
+            height: 50px;
+            border-width: 1px;
+            text-align: center;
+            background-color: #59B4C3;
+            font-size: 22px;
+        }
+
+        .Two {
+            background-color: #E78895;
+            width: 400px;
+            height: 400px;
+           
+        }
+
+        .Three {
+            background-color: #99BC85;
+            width: 400px;
+        }
+
+        .Four {
+            background-color: #DCF2F1;
+            height: 50px;
+            color:green;
+            font-size: 22px;
+        }
+    </style>
+    <!-- links -->
+</head>
+<body style="margin: 0px;">
+    <!-- top 5 box-->
+    <table>
+        <thead>
+            <tr>
+                <th class="Box-one">About</th>
+                <th class="Box-one">Skill</th>
+                <th class="Box-one">Personal Detail</th>
+                <th class="Box-one">Academic</th>
+                <th class="Box-one">Vision</th>
+            </tr>
+        </thead>
+        <!-- 2nd box -->
+        <tbody>
+            <tr>
+                <td class="Two" colspan="4" rowspan="4"> <video src="./videos/SampleVideo_1280x720_20mb (1).mp4" controls width="1100px"    ></video>
+                </td>
+                <td class="Three"><video src="./videos/SampleVideo_1280x720_20mb (1).mp4" controls width="300px"></video></td>
+            </tr>
+            <!-- 2nd box included -->
+            <tr>
+                <td class="Three"><video src="./videos/SampleVideo_1280x720_20mb (1).mp4" controls  width="300px"></video></td>
+            </tr>
+            <tr>
+                <td class="Three"><video src="./videos/SampleVideo_1280x720_20mb (1).mp4" width="300px"></video></td>
+            </tr>
+            <!-- 3th box -->
+        <tfoot class="Four">
+            <tr>
+                <td>Follow US:</td>
+                <td colspan="2" style="text-align: center;">Facebook</td>
+                <td>Twitter</td>
+                <td>Linked In</td>
+            </tr>
+        </tfoot>
+        </tbody>
+    </table>
+</body>
+
+</html>

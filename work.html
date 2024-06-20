@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Work</title>
+    <style>
+        .box {
+            
+            height: 600px;
+            width: 100vw;
+            border-style: solid;
+            text-align: center;
+
+        }
+
+        #part-one {
+         
+            background-color: aquamarine;
+        }
+
+        #part-two {
+            background-color: palegreen;
+
+        }
+
+        #part-three {
+            background-color: pink;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 20px;
+            background-color: lightblue;
+            position: relative;
+            width: 100vw;
+        }
+        a{
+            font-size: 25px;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
+
+</head>
+
+<body style="margin: 0px;">
+    <div class="menu">
+        <a href="#part-one">PART ONE</a>
+        <a href="#part-two">PART TWO</a>
+        <a href="#part-three">PART THREE</a>
+
+    </div>
+    <div id="part-one" class="box">
+        <h1>part one</h1>
+    </div>
+    <div id="part-two" class="box">
+        <h1>part part-two</h1>
+    </div>
+    <div id="part-three" class="box">
+        <h1>part three</h1>
+    </div>
+</body>
+</html>
