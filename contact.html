@@ -1,38 +1,260 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
-    <title>Contact Card</title>
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <!-- internal css -->
     <style>
-        /* id use */
+        /* logo */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        /* bod styling */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* div styling */
-        .contact-card {
-            width: 300px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 250px auto;
+        /* container styling */
+        .container {
+            width: 85%;
+            background: #fff;
+            border-radius: 6px;
+            padding: 20px 60px 30px 40px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
 
-        
+        /* at time two class styling */
+        .container .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* 3 section style */
+        .container .content .left-side {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            position: relative;
+        }
+
+        /* add left side before */
+        .content .left-side::before {
+            content: '';
+            position: absolute;
+            height: 70%;
+            width: 2px;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #afafb6;
+        }
+
+        /* 3 section styling */
+        .content .left-side {
+            margin: 14px;
+            text-align: center;
+        }
+
+        /* 3 section styling */
+        .content .left-side i {
+            font-size: 30px;
+            color: #3e2093;
+            margin-bottom: 10px;
+        }
+
+        /* 3 section styling */
+
+        .content .left-side .topic {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* 3 section styling */
+        .content .left-side .text-one,
+        .content .left-side .text-two {
+            font-size: 14px;
+            color: #afafb6;
+        }
+
+        /* 3 section styling */
+        .container .content .right-side {
+            width: 75%;
+            margin-left: 75px;
+        }
+
+        /* 3 section styling */
+        .content .right-side .topic-text {
+            font-size: 23px;
+            font-weight: 600;
+            color: #3e2093;
+        }
+
+        /* heading skills styling */
+        .top {
+            font-size: 33px;
+            font-weight: 600;
+            color: #3e2093;
+            margin-left: 40%;
+        }
+
+        .right-side {
+            height: 50px;
+            width: 100%;
+            margin: 12px 0;
+        }
+
+        .right-side {
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: #F0F1F8;
+            border-radius: 6px;
+            padding: 0 15px;
+            resize: none;
+        }
+
+        /* skill container */
+        .skill-container {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        /* skills */
+        .skill {
+            text-align: right;
+            padding-right: 20px;
+            line-height: 30px;
+            color: white;
+        }
+
+        /* HTML skill at 80% */
+        .html {
+            width: 80%;
+            background-color: #65B741;
+        }
+
+
+        /* CSS skill at 70% */
+        .css {
+            width: 70%;
+            background-color: #65B741;
+        }
+
+        /* js skills at 50% */
+        .js {
+            width: 50%;
+            background-color: #65B741;
+        }
+
+        /* media queery */
+        @media (max-width: 950px) {
+            .container {
+                width: 90%;
+                padding: 30px 40px 40px 35px;
+            }
+
+            .container .content .right-side {
+                width: 75%;
+                margin-left: 55px;
+            }
+        }
+   /* media queery */   
+        @media (max-width: 820px) {
+            .container {
+                margin: 40px 0;
+                height: 100%;
+            }
+
+            .container .content {
+                flex-direction: column-reverse;
+            }
+
+            .container .content .left-side {
+                width: 100%;
+                flex-direction: row;
+                margin-top: 40px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .container .content .left-side::before {
+                display: none;
+            }
+
+            .container .content .right-side {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="contact-card">
-        <h2>Contact Information</h2>
-        <div class="contact-details">
-            <p>Name: Sharda Parshuram Sawarkar</p>
-            <p>Email: shardasawarkar89@gmail.com </p>
-            <p>Phone: 7796186130</p>
+    <!-- container -->
+    <div class="container">
+        <!-- content part -->
+        <div class="content">
+            <!-- left section -->
+            <div class="left-side">
+                <!-- address section -->
+                <div class="address details">
+                    <!-- external icon -->
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="topic">Address</div>
+                    <div class="text-one">Panchwati</div>
+                    <div class="text-two">katol 441302</div>
+                </div>
+                <!-- phone section -->
+                <div class="phone details">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="topic">Phone</div>
+                    <div class="text-one">+91 7796186130</div>
+                    <div class="text-two">+91 7507489581</div>
+                </div>
+                <!-- email section -->
+                <div class="email details">
+                    <i class="fas fa-envelope"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one">Shardasawarkar89@gmail.com</div>
+                </div>
+            </div>
+            <!-- right side section -->
+            <div class="right-side">
+                <!-- skills -->
+                <div class="top">Skills</div>
+                <!-- html section -->
+                <div class="topic-text">HTML</div>
+                <div class="skill-container">
+                    <div class="skill html">80%</div>
+                </div>
+                <!-- css section -->
+                <div class="topic-text">CSS</div>
+                <div class="skill-container">
+                    <div class="skill css">70%</div>
+                </div>
+                <!-- js section -->
+                <div class="topic-text">JS</div>
+                <div class="skill-container">
+                    <div class="skill js">50%</div>
+                </div>
+                <br>
+                <!-- last self intro -->
+                <div class="topic-text">My Self</div>
+                <h4> I am a full-stack developer dedicated to creating innovative web applications.
+                    My interests range from front-end and back-end, system management to mobile application.</h4>
+            </div>
         </div>
     </div>
 </body>

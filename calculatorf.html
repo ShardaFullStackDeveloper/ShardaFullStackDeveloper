@@ -9,7 +9,7 @@
         /* main */
         .main {
             background-color: #242629;
-            height: 70vh;
+            height: 60vh;
             width: 40vw;
             display: flex;
             flex-direction: column;
@@ -20,22 +20,24 @@
         /* display */
         .top {
             background-color: #636569;
-            height: 100%;
+            height: 100px;
             width: 100%;
             text-align: right;
             font-size: 30px;
-
-
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+            box-sizing: border-box;
         }
 
         /* row section */
-        .row {
+        .row,
+        .lastrow {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            height: 100%;
+            height: calc(70vh / 6);
             width: 100%;
             background-color: #989ca3;
-
         }
 
         /* one */
@@ -43,7 +45,6 @@
             background-color: #61656b;
             border-style: solid;
             border-width: 1px;
-
         }
 
         /* button */
@@ -52,51 +53,86 @@
             width: 100%;
             background-color: #3c3d40;
             font-size: 22px;
+            color: white;
+            border: none;
         }
 
         /* last row */
         .lastrow {
-            display: grid;
             grid-template-columns: 2fr 1fr 1fr;
-            background-color: #3c3d40;
-            height: 100%;
-            width: 100%;
         }
 
         /* 4th button color */
         .color {
             background-color: #f29a02;
         }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .main {
+                width: 100vw;
+             
+                margin-left: 10%;
+            }
+
+            .top {
+                font-size: 24px;
+                height: 60px;
+            }
+
+            button {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main {
+                width: 100vw;
+                 margin-left: 0;
+            }
+
+            .top {
+                font-size: 20px;
+                height: 50px;
+            }
+
+            .row,
+            .lastrow {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                height: calc(70vh / 8);
+            }
+
+            .lastrow {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
     </style>
     <script>
-
         let total = 0;
         let displayString = "";
         let action = 0;
+
         function showresult() {
             if (action == 1) {
                 total = total + Number(displayString);
-            }
-            else if (action == 2) {
+            } else if (action == 2) {
                 total = total % Number(displayString);
-            }
-            else if (action == 3) {
+            } else if (action == 3) {
                 total = total / Number(displayString);
-            }
-
-            else if (action == 4) {
+            } else if (action == 4) {
                 total = total - Number(displayString);
-            }
-            else if (action == 5) {
+            } else if (action == 5) {
                 total = total * Number(displayString);
             }
             displayString = total;
             document.getElementById("display").innerHTML = displayString;
         }
 
-
         function clearFunction() {
-
             total = 0;
             displayString = "";
             document.getElementById("display").innerHTML = "";
@@ -105,49 +141,51 @@
         function numbertype(passnumber) {
             displayString = displayString + passnumber.toString();
             document.getElementById("display").innerHTML = displayString;
-
         }
+
         function add() {
             total = Number(displayString);
             displayString = "";
             action = 1;
             document.getElementById("display").innerHTML = displayString;
-
         }
+
         function backspace() {
             displayString = displayString.substring(0, displayString.length - 1);
             document.getElementById("display").innerHTML = displayString;
         }
+
         function percent() {
             total = Number(displayString);
             displayString = "";
             action = 2;
             document.getElementById("display").innerHTML = displayString;
         }
+
         function division() {
             total = Number(displayString);
             displayString = "";
             action = 3;
             document.getElementById("display").innerHTML = displayString;
         }
+
         function sub() {
             total = Number(displayString);
             displayString = "";
             action = 4;
             document.getElementById("display").innerHTML = displayString;
         }
+
         function multiply() {
             total = Number(displayString);
             displayString = "";
             action = 5;
             document.getElementById("display").innerHTML = displayString;
         }
-
     </script>
 </head>
 
-<body
-    style="background-image: url(https://www.shutterstock.com/image-photo/passbook-calculator-japanese-money-written-260nw-2326742479.jpg);background-size: cover">
+<body style="background-image: url(https://www.shutterstock.com/image-photo/passbook-calculator-japanese-money-written-260nw-2326742479.jpg);background-size: cover">
     <!-- main -->
     <div class="main">
         <!-- top -->
@@ -161,8 +199,7 @@
             <!-- 3rd button -->
             <div class="one" onclick="percent()"><button>%</button></div>
             <!-- 4th button -->
-            <div class="one" onclick="division ()"><button class="color">/</button></div>
-
+            <div class="one" onclick="division()"><button class="color">/</button></div>
         </div>
         <!-- 2nd row -->
         <div class="row">
@@ -205,7 +242,6 @@
             <!-- 3rd button -->
             <div class="one"><button class="color" onclick="showresult()">=</button></div>
         </div>
-
     </div>
 </body>
 
