@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+    page[size="A4"] {
+            width: 21cm;
+            height: 35cm;
+        }
+
+        @page {
+            size: 21cm 35cm;
+            margin: 0mm;
+        }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin-right: 90px;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      min-height: 1000px;
+      background-color: #fff;
+      margin: 50px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      box-shadow: 0 35px 55px rgba(0, 0, 0, 1);
+
+
+    }
+
+    .container .left-side {
+      position: relative;
+      background-color: #003147;
+      padding: 30px;
+      
+    }
+
+    .profile-text {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .profile-text .img-box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .profile-text .img-box img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-text h2 {
+      color: #fff;
+      font-size: 1.2em;
+      margin-top: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 600px;
+      line-height: 1.4em;
+    }
+
+    .profile-text h2 span {
+      font-size: 0.8em;
+      font-weight: 300;
+
+    }
+
+    .container.right-side {
+      position: relative;
+      background-color: #fff;
+      padding: 50px;
+      
+    }
+
+    .contact {
+      padding-top: 40px;
+    }
+
+    .right-side{
+      margin-left: 10px;
+    }
+    .title {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .contact ul {
+      position: relative;
+
+    }
+
+    .contact ul li {
+      list-style: none;
+      position: relative;
+      margin: 10px 0;
+      cursor: pointer;
+
+    }
+
+    .contact  .icon {
+      display: inline-block;
+      width: 30px;
+      font-size: 18px;
+      color: #03a9f4;
+
+    }
+
+    .contact ul li span {
+      color: #fff;
+      font-weight: 300;
+      
+      
+    }
+
+    .contact.education li {
+      margin-bottom: 15px;
+    }
+
+    .contact.education h5 {
+      color: #03a9f4;
+      font-weight: 500;
+    }
+
+    .contact.education h4:nth-child(2) {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .contact.education h4 {
+      color: #fff;
+      font-weight: 300;
+    }
+    
+    .contact .percent {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      background: #081921;
+      display: block;
+      margin-top: 5px;
+
+    }
+
+
+    .percent div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #03a9f4;
+    }
+
+    .about {
+      margin-bottom: 50px;
+
+    }
+
+    .about:last-child {
+      margin-bottom: 0px;
+    }
+
+    .title-two {
+      color: #003147;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #333;
+    }
+
+    .about .box {
+      display: flex;
+      flex-direction: row;
+      margin: 20px 0;
+    }
+
+    .about .box .year-company {
+      min-width: 150px;
+    }
+
+    .about .box .year-company h5 {
+      text-transform: uppercase;
+      color: #848c90;
+      font-weight: 600;
+    }
+
+    .about .box .text h4 {
+      text-transform: uppercase;
+      color: #2a7da2;
+      font-size: 16px;
+    }
+
+    .skills .box {
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .skills .box h4 {
+      text-transform: uppercase;
+      color: #848c99;
+      font-weight: 500;
+    }
+
+    .percent {
+      position: relative;
+      width: 100%;
+      height: 10px;
+      background-color: #f0f0f0;
+
+    }
+
+    .percent div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #03a9f4;
+    }
+
+    .interest ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .interest ui li {
+      list-style: none;
+      color: #333;
+      font-weight: 500;
+      margin: 10px 0;
+    }
+
+    .interest{
+      margin-left: 20px;
+    }
+    .interest ul li .fa {
+      color: #03a9f4;
+      font-size: 18px;
+      width: 20px;
+    }
+
+    .about .interest{
+      margin-left: 10px;
+    }
+    .bottom{
+      margin-left: 20px;
+    }
+   
+  
+    @media (max-width:1000px) {
+      /* .container {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+
+      } */
+
+      .interest ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:600px) {
+      .about .box {
+        flex-direction: column;
+      }
+
+      .about .box .year-company {
+        margin-bottom: 5px;
+      }
+
+      .interest ul {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .skills .box {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <page size="A4">
+  <!-- main container -->
+  <div class="container">
+    <!-- left side -->
+    <div class="left-side">
+      <!-- Profile section -->
+      <div class="profile-text">
+        <!-- image section -->
+        <div class="img-box">
+          <!--add image  -->
+          <img
+            src="data:image/jpeg;base64,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">
+        </div>
+        <!-- add name -->
+        <h2>Sharda Sawarkar<br><span>Web Developer</span></h2>
+      </div>
+      <!-- add contact section -->
+      <div class="contact">
+        <!--title sec  -->
+        <h3 class="title">contact Info</h3>
+        <!-- unordered list -->
+        <ul>
+          <li>
+            <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i> </span>
+            <span class="text" >+91 7796186130</span>
+          </li>
+
+
+          <li>
+            <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i> </span>
+            <span class="text" style="font-size:10.7px;">shardasawarkar89@gmail.com</span>
+          </li>
+          <li>
+            <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i> </span>
+            <span class="text">Katol ,India</span>
+          </li>
+        </ul>
+      </div>
+
+      <!--education  -->
+      <div class="contact education">
+        <!--title sec  -->
+        <h3 class="title">Education</h3>
+        <!-- unordered list -->
+        <ul>
+          <!--pg degree -->
+          <li>
+            <h5>2021 - 2023</h5>
+            <h4>Master Degree in Business Administration</h4>
+            <h4> Nagpur University</h4>
+          </li>
+          <!-- Bachelor degree -->
+          <li>
+            <h5>2019 - 2021</h5>
+            <h4>Bachelor Degree in Commerce</h4>
+            <h4>Nagpur University</h4>
+          </li>
+        </ul>
+      </div>
+      <!--language-->
+      <div class="contact language">
+        <!--title sec  -->
+        <h3 class="title">Language</h3>
+        <!-- unordered list -->
+        <ul>
+
+          <li>
+            <span class="text">English</span>
+            <span class="percent">
+              <div style="width: 60%;"></div>
+            </span>
+          </li>
+          <li>
+            <span class="text">Hindi</span>
+            <span class="percent">
+              <div style="width: 90%;"></div>
+            </span>
+          </li>
+          <li>
+            <span class="text">Marathi</span>
+            <span class="percent">
+              <div style="width: 90%;"></div>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <!--right side  -->
+    <div class="right-side">
+      <div class="about">
+        <h2 class="title-two">Profile</h2>
+        <p>Motivated and detail-oriented business administration graduate with a strong foundation in financial analysis
+          and project management. <br> <br> Adept at conducting market research, identifying growth opportunities, and
+          developing
+          strategic plans. Proven ability to streamline processes, optimize productivity, and drive organizational
+          success.
+        </p>
+
+      </div>
+
+      <!-- experience section -->
+      <div class="about">
+        <h2 class="title-two">Experience</h2>
+        <div class="box">
+          <div class="Year-company">
+            <h5>2023 - Present</h5>
+            <h5>Enjoy Programming</h5>
+
+          </div>
+          <div class="text">
+            <h4>Admin</h4>
+            <p style="margin-left: 10px;">
+              An administrator is responsible for overseeing and coordinating various administrative tasks, which may
+              include: Manage and organize office operations: Administrators oversee day-to-day operations, such as
+              managing schedules, coordinating meetings, and handling correspondence.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- skills -->
+
+      <div class="about skills">
+        <h2 class="title-two">Professional Skills</h2>
+        <div class="box">
+          <h4>HTML</h4>
+          <div class="percent">
+            <div style="width: 80%;"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h4>CSS</h4>
+          <div class="percent">
+            <div style="width: 70%;"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h4>Javascript</h4>
+          <div class="percent">
+            <div style="width: 60%;"></div>
+          </div>
+        </div>
+      </div>
+      <!-- interest section -->
+      <div class="about interest">
+        <h2 class="title-two">interest</h2>
+        <ul >
+          <li><i class="fa fa-book" aria-hidden="true"></i> Reading</li>
+          <li><i class="fa fa-gamepad" aria-hidden="true"></i> Gaming</li>
+        </ul>
+      </div>
+      <!-- certification -->
+      <div class="about skills">
+        <h2 class="title-two">certification</h2>
+        <ul class="bottom">
+          <li>Swayam - Enterpreneurship NPTL 2023</li>
+          <li>Swayam - Principle of management NPTL 2023</li>
+        </ul>
+      </div>
+      <!-- personal details -->
+      <!-- <div class="about skills">
+        <h2 class="title-two">Personal Information</h2>
+        <ul>
+          <li>Date of Birth:- 10/10/2000</li>
+          <li>Gender:- Female</li>
+        </ul>
+      </div> -->
+
+    </div>
+  </div>
+</page>
+</body>
+
+</html>
