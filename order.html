@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+
+        <script>
+            function submitButton() {
+                alert("Your order is confirmed")
+            }
+
+
+            
+        </script>
+</head>
+
+
+
+<body>
+    <!-- Add this section inside your <body> tag, after the contact section -->
+
+    <!-- Order Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Order Form</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="orderForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookSelect" class="form-label">Select Book</label>
+                            <select class="form-select" id="bookSelect" required>
+                                <option value="">Choose...</option>
+                                <option value="The Book Thief">The Book Thief</option>
+                                <option value="The Help">The Help</option>
+                                <option value="The Kite Runner">The Kite Runner</option>
+                                <option value="Organic Chemistry">Organic Chemistry</option>
+                                <option value="Physics">Physics</option>
+                                <option value="Geometry">Geometry</option>
+                                <option value="Finance">Finance</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quantity" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="quantity" min="1" value="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Delivery Address</label>
+                            <textarea class="form-control" id="address" rows="3"
+                                placeholder="Enter your delivery address" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="paymentMethod" class="form-label">Payment Method</label>
+                            <select class="form-select" id="paymentMethod" required>
+                                <option value="">Choose...</option>
+                                <option value="creditCard">Credit Card</option>
+                                <option value="debitCard">Debit Card</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="cashOnDelivery">Cash on Delivery</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="submitButton()">Submit Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
