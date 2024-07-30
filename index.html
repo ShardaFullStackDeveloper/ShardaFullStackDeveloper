@@ -2,447 +2,290 @@
 <html>
 
 <head>
-    <!-- title -->
-    <title>Book-Store</title>
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-    <!-- css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!-- jss -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
-       
-       <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.freepik.com/256/3145/3145765.png?semt=ais_hybrid">
-
+    <title>Portfolio</title>
     <style>
-        .flex {
+        /* root of body */
+        :root {
+            --primary-color: #33383C;
+            --secondary-color: #33383C;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400&display=swap');
+
+
+
+        /* body styling */
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: auto;
+
+        }
+
+
+        /* header section */
+        header {
+            padding: 1.7rem 0;
             display: flex;
-            flex-direction: row;
             justify-content: space-around;
+            background-color: transparent;
+            align-content: center;
         }
 
-        html {
-            scroll-behavior: smooth;
+        /* logo of social media */
+        .logo a {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
         }
 
+        /* nav sec */
+        nav {
+            z-index: 1;
+        }
 
-        .navbar-nav .nav-link {
-            font-size: 18px;
-            /* Set default font size */
+        /* nav & anchor */
+        nav a {
+            color: #33383C;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 0.4rem 1.3rem;
 
         }
 
-        .navbar-nav .nav-link:hover {
-            color: #602bd2;
-            /* Change color on hover */
-            font-size: 20px;
-            /* Increase font size on hover */
-            font-weight: bold;
-
+        /* id click */
+        #click {
+            display: none;
         }
 
-        .card {
+        /* menu */
+        .menu {
+            display: none;
+        }
+
+        /* nav & anchor */
+        nav a {
             position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
         }
 
-        .card:hover {
-            transform: scale(1.05);
-            /* Scale up slightly on hover */
+        /* nav & anchor */
+        nav a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 2.5rem);
+            height: 3px;
+            background-color: var(--primary-color);
+            transform: scale(0, 1);
+            transform-origin: left;
+            transition: transform .3s ease;
         }
 
-        .card img {
-            transition: opacity 0.3s ease;
+        /* nav & anchor */
+        nav a:hover::before {
+            transform: scale(1, 1);
         }
 
-        .card:hover img {
-            opacity: 0.8;
-            /* Reduce opacity on hover */
+        /*NAVBAR*/
+
+        section {
+            margin: 3rem 8.5rem;
+        }
+
+        /* main section */
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* main section h3 */
+        .main h3 {
+            font-size: 1.5rem;
+        }
+
+        /* main section h1 */
+        .main h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-top: .5rem;
+            color: #33383C;
+        }
+
+        /* main section p */
+        .main p {
+            line-height: 1.7;
+            font-size: 1.15rem;
+            margin-top: .5rem;
+        }
+
+        /* information */
+        .Information {
+            width: 50%;
+        }
+
+        /* social */
+        .social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* social anchor */
+        .social a {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            border: 1px solid #33383C;
+            border-radius: 50%;
+            padding: 0.3rem;
+            text-align: center;
+            width: 45px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+
+        }
+
+        /* social anchor hover add */
+        .social a:hover {
+            color: #fff;
+            background-color: var(--secondary-color);
+            box-shadow: 0 0 20px var(--secondary-color);
+            border-color: var(--secondary-color);
+            transition: all .3s ease-in-out;
+
+        }
+
+        /* media queery */
+        @media only screen and (max-width: 1024px) {
+            html {
+                font-size: 80%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            html {
+                font-size: 100%;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .menu {
+                font-size: 1.5rem;
+                color: var(--primary-color);
+            }
+
+            header {
+                padding: 0.7rem 1rem;
+                justify-content: space-between;
+            }
+
+            nav {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                background-color: #fff;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                top: 3rem;
+                transition: all 0.3s ease;
+
+            }
+
+            nav a {
+                color: var(--primary-color);
+
+            }
+
+            #click:checked~nav {
+                left: 0;
+            }
+
+            nav a::before {
+                content: none;
+            }
+
+            section {
+                margin: 1rem 1.5rem;
+            }
+
+            .Information {
+                width: 100%;
+            }
+        }
+
+        /* media queery */
+        @media only screen and (max-width: 480px) {
+
+            section {
+                margin: 0 1rem;
+            }
+
+
+
+
         }
     </style>
-    <script>
-        const books = [
-            "The Book Thief",
-            "The Help",
-            "The Kite Runner",
-            "The Kite Runner",
-            "The Kite Runner",
-            "Organic Chemistry",
-            "Physics",
-            "Geometry",
-            "Finance"
-        ];
-
-        function searchBooks() {
-            const searchInput = document.getElementById('searchInput').value.toLowerCase();
-            const bookElements = document.querySelectorAll('.card-text');
-
-            bookElements.forEach(element => {
-                const bookName = element.innerText.split('\n')[0].toLowerCase();
-                const card = element.closest('.col');
-
-                if (bookName.includes(searchInput)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
 </head>
 
-<body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-
-
+<body style="background-image: url(./assets/images/bg.jpg) ;background-size: cover; background-repeat: no-repeat;">
+    <!-- main section -->
+    <header id="header">
+        <!-- logo section -->
+        <div class="logo">
+            <a href="#" id="logo"></a>
         </div>
-
-        <div class="container-fluid" style="background-color: #36C2CE;">
-            <img src="https://cdn-icons-png.freepik.com/256/3145/3145765.png?semt=ais_hybrid" width="20px">
-            <a class="navbar-brand" href="#" style="font-weight: bold; font-size: 32px;">Book-Store </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 20%;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#book">Book</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#benefits ">Benefits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#contact">Contact</a>
-                    </li>
-
-                </ul>
-
-
-                <form class="d-flex" role="search" onsubmit="event.preventDefault(); searchBooks();">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                        id="searchInput">
-                    <button class="btn btn-outline-success" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                        </svg>
-                    </button>
-                </form>
-                </form>
+        <!-- input -->
+        <input type="checkbox" id="click">
+        <label for="click" class="mainicon">
+            <div class="menu" id="menu">
+                <i class="bi bi-list"></i>
             </div>
-        </div>
-    </nav>
+        </label>
+        <nav>
+            <!-- 4 button -->
+            <a href="#">Home</a>
+            <a href="resume.html">About</a>
+            <a href="projects.html">Project</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
+    <!-- Second section -->
+    <section>
+        <div class="main">
+            <!-- imformation section -->
+            <div class="Information">
+                <h3>Hi, I'm Sharda</h3>
+                <h1>Web Developer</h1>
+                <p>I'm a professional Web Developer.
+                </p>
+                <!-- add social media button -->
+                <div class="social">
 
-    <!-- video section -->
-    <video src="./5430658-hd_1920_1080_25fps.mp4" autoplay loop muted width="100%"></video>
-    <!-- book image section -->
-    <!-- 1st -->
-    <div class="album py-5 bg-body-tertiary" id="book">
-        <div class="container">
-
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://rukminim2.flixcart.com/image/850/1000/av-media/movies/r/f/2/the-book-thief-original-imadt2yy7agzcgew.jpeg?q=90&crop=false"
-                            height="450px">
-                        <div class="card-body">
-                            <p class="card-text" style="font-size: 22px;">The Book Thief <br> ₹280.01 <br>
-                                <small>Delivery Charge 10%</small>
-                            </p>
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group" style="gap: 10px;">
-                                    <a href="view.html" class="btn btn-primary">View</a>
-                                    <a href="order.html" class="btn btn-primary">Order</a>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2nd -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://m.media-amazon.com/images/I/81lChm6vouL._AC_UF1000,1000_QL80_.jpg"
-                            height="450px">
-                        <div class="card-body">
-                            <p class="card-text" style="font-size: 22px;">The Help <br>₹550.00<br> <small>₹30.00
-                                    Delivery</small></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group" style="gap: 10px;">
-                                    <a href="view.html" class="btn btn-primary">View</a>
-                                    <a href="order.html" class="btn btn-primary">Order</a>
-                                </div>
-
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 3rd -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://m.media-amazon.com/images/I/71yq251oACL._AC_UF1000,1000_QL80_.jpg"
-                            height="450px">
-                        <div class="card-body">
-                            <p class="card-text" style="font-size: 22px;">The Kite Runner <br>₹1,119.00<br> <small>Free
-                                    Delivery</small></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group" style="gap: 10px;">
-                                    <a href="view.html" class="btn btn-primary">View</a>
-                                    <a href="order.html" class="btn btn-primary">Order</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 4th -->
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://m.media-amazon.com/images/I/81hGJInOZCL._AC_UF1000,1000_QL80_.jpg"
-                            height="450px">
-                        <div class="card-body">
-                            <p class="card-text" style="font-size: 22px;">The Kite Runner <br>₹460.49<br> <small>Free
-                                    Delivery</small></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group" style="gap: 10px;">
-                                    <a href="view.html" class="btn btn-primary">View</a>
-                                    <a href="order.html" class="btn btn-primary">Order</a>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
+                    <a href="https://join.skype.com/invite/s5Cl3Qbs85r9"><i class="bi bi-skype"></i></a>
+                    <a href="https://in.linkedin.com/"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com/ShardaFullStakeDeveloper/ShardaFullStackDeveloper"><i
+                            class="bi bi-github"></i></a>
                 </div>
 
-                <!-- 5th -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTft0xRU7y0IThd8dBx68Q4_gMtqR7gXZCCqDgpqIFwJph7kkygquB79itokVPFWWSgr6fTD7CDw2CIT8LJVGz-sSuw8cOoupx4RVdcTaezFNDlhbuj4TdT&usqp=CAE"
-                            height="450px">
-                        <div class="card-body">
-                            <p class="card-text" style="font-size: 22px;">The Kite Runner <br>₹615.00<br> <small>Free
-                                    Delivery</small></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group" style="gap: 10px;">
-                                    <a href="view.html" class="btn btn-primary">View</a>
-                                    <a href="order.html" class="btn btn-primary">Order</a>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6th -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://images.thenile.io/r1000/9780199270293.jpg" height="450px">
-                        <div class="card-body">
-
-                            <p class="card-text" style="font-size: 22px;">Organic Chemistry <br>₹180<br> <small>Free
-                                    Delivery</small></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group" style="gap: 10px;">
-                                    <a href="view.html" class="btn btn-primary">View</a>
-                                    <a href="order.html" class="btn btn-primary">Order</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 7th -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1569197039l/51380777.jpg"
-                            height="496px">
-                        <div class="card-body">
-                            <p class="card-text" style="font-size: 22px;">Physics <br>₹495<br> <small>Free
-                                    Delivery</small></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group" style="gap: 10px;">
-                                    <a href="view.html" class="btn btn-primary">View</a>
-                                    <a href="order.html" class="btn btn-primary">Order</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 8th -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://classicaleducationbooks.ca/wp-content/uploads/2019/06/jacobs-geometry.jpg"
-                            height="496px">
-                        <div class="card-body">
-                            <p class="card-text" style="font-size: 22px;">Geometry <br>₹131<br> <small>Free
-                                    Delivery</small></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group" style="gap: 10px;">
-                                    <a href="view.html" class="btn btn-primary">View</a>
-                                    <a href="order.html" class="btn btn-primary">Order</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 9th -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://www.perlego.com/books/RM_Books/pearson_lm_vzezmkn/9780273777861.jpg"
-                            height="496px">
-                        <div class="card-body">
-                            <p class="card-text" style="font-size: 22px;">Finance<br>₹350.00<br> <small>Free
-                                    Delivery</small></p>
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group" style="gap: 10px;">
-                                    <a href="view.html" class="btn btn-primary">View</a>
-                                    <a href="order.html" class="btn btn-primary">Order</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </div>
 
-    <section id="benefits" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4" style="color: green;">Why Reading Books is Important?</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100">
-                        <img src="pexels-nietjuh-1809340.jpg" class="card-img-top" alt="Reading books">
-                        <div class="card-body">
-                            <h5 class="card-title">The Joy of Reading</h5>
-                            <p class="card-text">Discover new worlds and expand your horizons through the power of books.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Benefits of Reading</h5>
-                            <ul class="list-group list-group-flush" >
-                                <li class="list-group-item"style="background-color: pink; " >Self
-                                    Improvement: Reading helps you develop positive thinking. Reading is important because it develops
-                                    your mind and gives you excessive knowledge and lessons of life. It helps you understand the world
-                                    around you better. It keeps your mind active and enhances your creative ability.</li>
-                                    <br>
-                                <li class="list-group-item" style="background-color: pink;">  Communication Skills: Reading improves your vocabulary and develops your communication skills. It
-                                    helps you learn how to use your language creatively. Not only does it improve your communication but
-                                    it also makes you a better writer. Good communication is important in every aspect of life.</li>
-                                    <br>
-                                <li class="list-group-item" style="background-color: pink;">        Increases Knowledge: Books enable you to have a glimpse into cultures, traditions, arts, history,
-                                    geography, health, psychology and several other subjects and aspects of life. You get an amazing
-                                    amount of knowledge and information from books.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
-   
-    <!-- Address Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4" style="color: black; font-size: 32px; background-color: gray;" >Contact Us</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <h4> Address</h4>
-                    <address>
-                        123 Bookstore Street<br>
-                        Cityville, ABC 12345<br>
-                        Country
-                    </address>
-                    <h4 class="mt-4">Contact Information</h4>
-                    <p>
-                        Email: info@example.com<br>
-                        Phone: +123 456 7890<br>
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29762.67658210876!2d78.56674099999999!3d21.2743847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd459ded1faa031%3A0x2199f0f7535c15c8!2sKatol%2C%20Maharashtra%20441302!5e0!3m2!1sen!2sin!4v1710695325644!5m2!1sen!2sin"
-                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                <svg class="bi" width="30" height="24">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-            </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, <img
-                    src="https://cdn-icons-png.freepik.com/256/3145/3145765.png?semt=ais_hybrid" width="20px"></span>
-        </div>
-
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25"
-                        height="25" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                        <path
-                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15" />
-                    </svg></a></li>
-
-
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25"
-                        height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-                    </svg> </a></li>
-
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25"
-                        height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                        <path
-                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                    </svg> </a></li>
-
-        </ul>
-    </footer>
-    </div>
-
-
-
-
-
-
-
 
 
 </body>
-
 
 </html>
