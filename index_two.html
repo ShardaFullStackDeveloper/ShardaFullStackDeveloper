@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        /* main container */
+        body {
+
+            height: 400vh;
+            width: 100vw;
+            margin: 0%;
+            border: solid;
+            background-image: url(https://www.itl.cat/pngfile/big/92-924260_orange-abstract-vector-backgrounds.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+
+        }
+
+        a:link {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        p:hover {
+            color: rgb(227, 11, 47);
+        }
+        h1:hover{
+            color: rgb(227, 11, 47);
+        }
+        h2:hover{
+            color: rgb(227, 11, 47);
+        }
+
+
+        /* container one */
+        .container-one {
+            display: flex;
+            flex-direction: row;
+            
+            height: 5%;
+            width: 100%;
+            margin-right: 40px;
+            margin-top: 30px;
+        }
+
+        .inner-container-one {
+            display: flex;
+            justify-content:center;
+            height: 100%;
+            width: 10%;
+            margin-right: 40px;
+            font-size: 20px;
+        }
+
+        /* container two */
+        .container-two {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 25%;
+            width: 100%;
+            margin-left: 40px;
+
+
+
+        }
+
+        /* container three */
+        .container-three {
+            display: flex;
+            flex-direction: column;
+            height: 35%;
+            width: 100%;
+
+
+        }
+
+        #table {
+            height: 70%;
+            width: 70%;
+            border-style: solid;
+            border-collapse: collapse;
+            margin-left: 175px;
+        }
+
+        tr {
+            border-style: solid;
+            border-collapse: collapse;
+
+        }
+
+
+
+        td {
+            border-style: solid;
+            border-collapse: collapse;
+        }
+
+
+
+        /* container four */
+        .container-four {
+            display: flex;
+            flex-direction: column;
+            height: 20%;
+            width: 100%;
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            height: 25%;
+            width: 100%;
+            margin-left: 40px;
+
+        }
+
+        /* container five */
+        .container-five {
+            display: flex;
+            flex-direction: row;
+            height: 3%;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .inner-box-one {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 25%;
+            text-align: center;
+            font-size: 20px;
+
+
+        }
+    </style>
+</head>
+
+<body style="border: solid;">
+
+    <!-- container-one -->
+    <div class="container-one">
+        <div class="inner-container-one"><a href="#about">About</a></div>
+        <div class="inner-container-one"><a href="#project">Project</a></div>
+        <div class="inner-container-one"><a href="#education">Education</a></div>
+        <div class="inner-container-one"><a href="#contact">Contact</a></div>
+    </div>
+
+    <!-- container-two -->
+    <div class="container-two" id="about">
+        <h1>Welcome to my Webpage!</h1>
+        <p style="font-size: 25px;">Hello</p>
+        <h2>I am Prajakta Kothe</h2>
+        <p style="font-size: 20px;">For more details, here is my resume</p>
+        <button style="height: 50px;width: 100px; background-color: wheat;"><a
+                style="text-decoration: none;color: black;" href="resume.html">Resume </a></button>
+
+    </div>
+    <hr>
+    <!-- container-three -->
+    <div class="container-three" id="project">
+        <table id="table">
+            <!-- section one -->
+            <tr>
+                <td>
+                    <a href="cricketers.html">
+                        <h2> Cricketers Project</h2>
+                        <img src="https://i.pinimg.com/736x/2a/27/8d/2a278d9e9068159b42c05a366cc16271.jpg" alt=""
+                            height="200px" width="200px">
+                    </a>
+                </td>
+                <td>
+                    <a href="movies.html">
+                        <h2>Movies Project</h2>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjbJQ437m6CEOBgzHT7L2QcP6YVoh9MP6SVA&s"
+                            alt="" height="200px" width="200px">
+                    </a>
+                </td>
+                <td>
+                    <a href="table.html">
+                        <h2>Table Project-1</h2>
+                        <img src="https://www.freecodecamp.org/news/content/images/2021/09/uide-to-writting-a-good-readme-file--7-.png"
+                            alt="" height="200px" width="200px">
+                    </a>
+                </td>
+                <td>
+                    <a href="newtable.html">
+                        <h2>Table Project-2</h2>
+                        <img src="https://www.freecodecamp.org/news/content/images/2021/09/uide-to-writting-a-good-readme-file--7-.png"
+                            alt="" height="200px" width="200px">
+                    </a>
+                </td>
+            </tr>
+            <!-- section two -->
+            <tr>
+
+                <td>
+                    <a href="./CSS Project/layoutone.html">
+                        <h2>Layout Project-01</h2>
+                        <img src="https://www.worldlabel.com/sites/default/files/wl-162_0.jpg" alt="" height="200px"
+                            width="200px">
+                    </a>
+                </td>
+                <td>
+                    <a href="./CSS Project/layouttwo.html">
+                        <h2>Layout Project-02</h2>
+                        <img src="https://www.worldlabel.com/sites/default/files/wl-162_0.jpg" alt="" height="200px"
+                            width="200px">
+
+                    </a>
+                </td>
+                <td>
+                    <a href="layoutthree.html">
+                        <h2>Layout Project-03</h2>
+                        <img src="https://www.worldlabel.com/sites/default/files/wl-162_0.jpg" alt="" height="200px"
+                            width="200px">
+
+                    </a>
+                </td>
+                <td>
+                    <a href="flexone.html">
+                        <h2>Flex Project</h2>
+                        <img src="https://th.bing.com/th/id/OIP.W06gnT3sjkoWFjQsolkccgAAAA?rs=1&pid=ImgDetMain" alt="">
+                    </a>
+                </td>
+            </tr>
+            <!-- section three -->
+            <tr>
+
+                <td><a href="chess.html">
+                        <h2>Chess Project</h2>
+                        <img src="https://chessily.com/wp-content/uploads/2022/05/chess-opening-optimal-development.png"
+                            alt="" height="200px" width="200px">
+
+                    </a>
+                </td>
+                <td><a href="Boostrap-Project/gift-shop.html">
+                        <h2>Boostrap Project</h2>
+                        <img src="https://toppng.com/uploads/preview/bootstrap-featured-image-bootstrap-3-logo-11563293130teouf93qpu.png" alt="" height="200px" width="200px">
+
+                    </a>
+                </td>
+                <td><a href="Boostrap-Project/boostrap_index.html">
+                        <h2>Index(Boostrap)</h2>
+                        <img src="https://toppng.com/uploads/preview/bootstrap-featured-image-bootstrap-3-logo-11563293130teouf93qpu.png" alt="" height="200px" width="200px">
+
+                    </a>
+                </td>
+                <td><a href="Boostrap-Project/buy.html">
+                        <h2>Billing Page(Boostrap)</h2>
+                        <img src="https://toppng.com/uploads/preview/bootstrap-featured-image-bootstrap-3-logo-11563293130teouf93qpu.png" alt="" height="200px" width="200px">
+
+                    </a>
+                </td>
+            </tr>
+
+        </table>
+
+
+
+
+    </div>
+    <br>
+    <!-- container-four -->
+    <div class="container-four" id="education">
+        <p>Bachelor Degree: Bcom (Bachelor of commerce)(2020-23)</span></p>
+        <p>Collage Name: Nabira Mahavidyalaya,Katol</p>
+        <p>Masters Degree: MBA (Masters of business administration)(pursuing) </p>
+        <p>Collage Name:Dr. Ambedkar Institute of Management Studiesm & Research</p>
+    </div>
+    <!-- container-five -->
+    <div class="container-five" id="contact">
+        <div class="inner-box-one">
+            <div><img src="https://th.bing.com/th/id/OIP.7tmcRXDqUnqMpBWDfsQ8wgHaHu?w=189&h=197&c=7&r=0&o=5&pid=1.7"
+                    alt="" height="100px" width="100px">
+            </div>
+            <div><a href="https://web.skype.com/">Skype ID:</a></div>
+        </div>
+        <div class="inner-box-one">
+            <div><img src="https://icon-library.com/images/email-icon-black-and-white/email-icon-black-and-white-4.jpg"
+                    alt="" height="100px" width="100px">
+            </div>
+            <div><a href="https://mail.google.com/mail/u/0/#inbox">Email</a></div>
+
+        </div>
+        <div class="inner-box-one">
+            <div><img src="https://pngimg.com/uploads/github/github_PNG47.png" alt="" height="100px" width="100px">
+            </div>
+            <div><a href="https://github.com/prajaktakothe/prajaktaFillStackDeveloper">Github ID </a></div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
